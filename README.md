@@ -2,6 +2,13 @@
 
 This repository contains a set of controls that help with using [DotVVM](https://github.com/riganti/dotvvm) and ASP.NET Web Forms together in one ASP.NET application.
 
+This integration can help with modernization of legacy ASP.NET web apps as it allows to build new parts of the old application using modern and cleaner development methods (MVVM pattern) while utilizing the same business layer and allowing smooth transition between old and new parts of the application thanks to single sign on.
+
+> The development of this library is still in progress. The integration will work with DotVVM 2.0. When the library is more stable, it will be published on Nuget - currently you need to build the source code. 
+
+Any feedback is welcome - we're on [Gitter](https://gitter.im/riganti/dotvvm).
+
+
 ## Controls
 
 * `<dotvvm:RouteLink runat="server">` is ASP.NET Web Forms control that renders hyperlinks for DotVVM routes.
