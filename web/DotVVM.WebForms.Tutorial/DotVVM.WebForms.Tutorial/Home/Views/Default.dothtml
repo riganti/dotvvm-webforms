@@ -1,0 +1,21 @@
+﻿@viewModel DotVVM.WebForms.Tutorial.Home.ViewModels.DefaultViewModel, DotVVM.WebForms.Tutorial
+@masterPage Home/Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <cc:Sample SampleName="01-no-form" />
+    <cc:Sample SampleName="02-no-runat-server-and-control-ids" />
+    <cc:Sample SampleName="03-no-viewstate" />
+    <cc:Sample SampleName="04-master-pages" />
+    <cc:Sample SampleName="05-data-binding-everywhere" />
+    <cc:Sample SampleName="06-client-side-interactivity" />
+    <cc:Sample SampleName="07-events" />
+    <cc:Sample SampleName="08-repeater" />
+    <cc:Sample SampleName="09-checkboxlist" />
+    <cc:Sample SampleName="10-textbox-and-validation" />
+    <cc:Sample SampleName="11-localization" />
+    <cc:Sample SampleName="12-linking-to-routes" />
+    <cc:Sample SampleName="13-gridview" />
+    <cc:Sample SampleName="14-fileupload" />
+
+</dot:Content>

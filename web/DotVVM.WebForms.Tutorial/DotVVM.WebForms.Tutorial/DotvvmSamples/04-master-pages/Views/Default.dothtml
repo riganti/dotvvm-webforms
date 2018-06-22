@@ -1,0 +1,11 @@
+﻿@viewModel DotVVM.WebForms.Tutorial.DotvvmSamples._04_master_pages.ViewModels.DefaultViewModel, DotVVM.WebForms.Tutorial
+@masterPage DotvvmSamples/04-master-pages/Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="HeadContent">
+
+</dot:Content>
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+</dot:Content>
+

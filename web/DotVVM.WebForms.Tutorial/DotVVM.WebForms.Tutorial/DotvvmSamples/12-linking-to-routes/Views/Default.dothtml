@@ -1,0 +1,19 @@
+﻿@viewModel DotVVM.WebForms.Tutorial.DotvvmSamples._12_linking_to_routes.ViewModels.DefaultViewModel, DotVVM.WebForms.Tutorial
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <dot:RouteLink RouteName="Sample12" Param-Id="1" Text="Link" />
+
+    Route Parameter: {{value: CurrentId}}
+
+</body>
+</html>
+
+

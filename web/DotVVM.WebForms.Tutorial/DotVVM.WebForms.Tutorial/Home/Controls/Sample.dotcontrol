@@ -1,0 +1,20 @@
+﻿@viewModel System.Object, mscorlib
+@baseType DotVVM.WebForms.Tutorial.Home.Controls.Sample, DotVVM.WebForms.Tutorial
+
+<div class="section">
+    <dot:HtmlLiteral Html="{resource: _control.Data.SectionTitle}" />
+
+    <div class="column">
+
+        <dot:HtmlLiteral Html="{resource: _control.Data.WebFormsHtml}" />
+
+    </div>
+
+    <div class="column">
+
+        <dot:HtmlLiteral Html="{resource: _control.Data.DotvvmHtml}" />
+
+    </div>
+
+</div>
+
