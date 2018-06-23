@@ -6,12 +6,18 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="~/Content/site.min.css" rel="stylesheet" />
+    <script src="~/Scripts/syntax/syntax.js"></script>
+    <script src="~/Scripts/syntax/syntax_csharp.js"></script>
+    <script src="~/Scripts/syntax/syntax_dothtml.js"></script>
 </head>
 <body>
 
- 
     <dot:ContentPlaceHolder ID="MainContent" />
 
+    <script>
+        TinySyntaxHighlighter.initialize();
+    </script>
 </body>
 </html>
 

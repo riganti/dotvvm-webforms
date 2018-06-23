@@ -17,18 +17,23 @@ In ASP.NET, files can be uploaded on a postback. It is not easy to show the uplo
 ### Default.aspx.cs
 
 ```CSHARP
-if (ImageFileUpload.HasFiles)
+protected void UploadButton_OnClick(object sender, EventArgs e)
 {
-    foreach (var file in ImageFileUpload.PostedFiles)
+    if (ImageFileUpload.HasFiles)
     {
-        file.SaveAs("somefile.png");
+        foreach (var file in ImageFileUpload.PostedFiles)
+        {
+            file.SaveAs("filename.png");
+        }
     }
 }
 ```
 
 -------------------------------------
 
-DotVVM `FileUpload` control can display upload progress, errors, and can be styled using CSS and uploads files on the background. The files are saved in a temporary store on the server and can be retrieved by their unique IDs stored in the viewmodel.
+DotVVM [FileUpload](https://www.dotvvm.com/docs/controls/builtin/FileUpload/2.0) control can display upload progress, errors, and can be styled using CSS. It always uploads files on the background. 
+
+The files are saved in a temporary store on the server and can be retrieved by their unique IDs stored in the viewmodel.
 
 ### Default.dothtml
 

@@ -2,7 +2,7 @@
 
 -------------------------------------
 
-ASP.NET can use `Eval`, `Bind` or `Item.Property` in data-bound controls like `GridView`. Using `Eval` or `Bind` can lead to runtime errors.
+In ASP.NET, you can use `Eval`, `Bind` or `Item.Property` in data-bound controls like `GridView`. However, using `Eval` or `Bind` can lead to runtime errors, and the strongly-typed bindings cannot be used everywhere and have some limitations.
 
 ### Default.aspx
 
@@ -24,7 +24,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 -------------------------------------
 
-DotVVM can do data-binding everywhere and it is always type-safe. Even complex types and collections are fully supported.
+DotVVM uses data-binding everywhere and it is always type-safe. Even complex types and collections are fully supported.
 
 ### Default.dothtml
 

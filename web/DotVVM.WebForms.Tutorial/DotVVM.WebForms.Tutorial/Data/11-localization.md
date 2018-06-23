@@ -10,7 +10,7 @@ ASP.NET provided a way to use RESX files for localization of controls.
 
 -------------------------------------
 
-DotVVM supports the resource binding for RESX files or other C# expressions (e.g. ASP.NET Core localization).
+DotVVM supports the [resource binding](https://www.dotvvm.com/docs/tutorials/basics-resource-binding/2.0) for RESX files or other C# expressions (e.g. ASP.NET Core localization).
 
 ```DOTHTML
 <dot:Button Text="{resource: MyResources.SaveButtonText}" />

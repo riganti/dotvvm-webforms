@@ -2,7 +2,7 @@
 
 -------------------------------------
 
-ASP.NET `CheckBoxList` control can return a collection of IDs, but the collection is not strongly-typed.
+ASP.NET `CheckBoxList` control can return a collection of IDs, but the collection is not strongly-typed and working with selected items is not very straight-forward.
 
 ### Default.aspx
 
@@ -24,7 +24,7 @@ var selectedIds = CountryList.Items.OfType<ListItem>()
 
 -------------------------------------
 
-DotVVM `CheckBox` can be bound to a typed collection of values. Values that are checked will appear in the collection.
+DotVVM [CheckBox](https://www.dotvvm.com/docs/controls/builtin/CheckBox/2.0) can be bound to a single boolean property, or to a typed collection of values. Values which are checked will appear in the collection, and vice-versa.
 
 ### Default.dothtml
 

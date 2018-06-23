@@ -2,7 +2,7 @@
 
 -------------------------------------
 
-The data-binding expressions are evaluated on the server. If you want to disable a `TextBox` based on `CheckBox` value, you need to make a postback, or write a custom JavaScript.
+The data-binding expressions are evaluated on the server. If you want to disable a `TextBox` based on `CheckBox` value, you need to make a postback. Alternatively, you write a piece of JavaScript and deal with client IDs. 
 
 ### Default.aspx
 
@@ -27,7 +27,7 @@ protected void IsOtherItemCheckBox_CheckedChanged(object sender, EventArgs e)
 
 -------------------------------------
 
-In DotVVM, the binding expressions are translated to JavaScript and evaluated directly in the browser.
+In DotVVM, the binding expressions are translated to JavaScript and evaluated directly in the browser. You can also use expressions in [value bindings](https://www.dotvvm.com/docs/tutorials/basics-value-binding/2.0).
 
 ### Default.dothtml
 

@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "Content/site.css",
+    "inputFile": "Content/site.scss"
+  },
+  {
+    "outputFile": "Scripts/syntax/syntax_dothtml.es5.js",
+    "inputFile": "Scripts/syntax/syntax_dothtml.js"
+  },
+  {
+    "outputFile": "Scripts/syntax/syntax_csharp.es5.js",
+    "inputFile": "Scripts/syntax/syntax_csharp.js"
+  },
+  {
+    "outputFile": "Scripts/syntax/syntax.es5.js",
+    "inputFile": "Scripts/syntax/syntax.js"
+  }
+]

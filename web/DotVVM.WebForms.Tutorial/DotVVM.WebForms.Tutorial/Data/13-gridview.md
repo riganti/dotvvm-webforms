@@ -35,9 +35,9 @@ public IQueryable<ProductDTO> GetData()
 
 -------------------------------------
 
-DotVVM contains a similar `GridView` control. It can be populated manually, or using `IQueryable`. 
+DotVVM contains a similar [GridView](https://www.dotvvm.com/docs/controls/builtin/GridView/2.0) control. It can be populated manually, or using `IQueryable`. 
 
-The control can be styled easily using CSS, and the paging is done by a separate `DataPager` control.
+The control can be styled easily using CSS, and the paging is done by a stand-alone [DataPager](https://www.dotvvm.com/docs/controls/builtin/DataPager/2.0) control.
 
 ### Default.dothtml
 

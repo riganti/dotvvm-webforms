@@ -44,7 +44,7 @@ ASP.NET uses `ContentPlaceHolder` and `Content` controls to define a template an
 
 -------------------------------------
 
-DotVVM uses the same control names. If you need a Single Page Application, you can use `SpaContentPlaceHolder`.
+DotVVM uses the same control names. If you want to build a [Single Page Application](https://www.dotvvm.com/docs/tutorials/basics-single-page-applications-spa/2.0), you can just use `SpaContentPlaceHolder`.
 
 ### Site.dotmaster
 

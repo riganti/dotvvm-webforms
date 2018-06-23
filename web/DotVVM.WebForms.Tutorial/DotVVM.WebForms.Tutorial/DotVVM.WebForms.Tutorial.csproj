@@ -265,8 +265,34 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\out.txt" />
+    <Content Include="Content\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\syntax\syntax.es5.js">
+      <DependentUpon>syntax.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax.es5.min.js">
+      <DependentUpon>syntax.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax.js" />
+    <Content Include="Scripts\syntax\syntax_csharp.es5.js">
+      <DependentUpon>syntax_csharp.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax_csharp.es5.min.js">
+      <DependentUpon>syntax_csharp.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax_csharp.js" />
+    <Content Include="Scripts\syntax\syntax_dothtml.es5.js">
+      <DependentUpon>syntax_dothtml.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax_dothtml.es5.min.js">
+      <DependentUpon>syntax_dothtml.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\syntax\syntax_dothtml.js" />
     <Content Include="Web.config" />
     <Content Include="Data\01-no-form.md" />
     <Content Include="Data\02-no-runat-server-and-control-ids.md" />
@@ -313,6 +339,11 @@
     <Content Include="Home\Views\Site.dotmaster" />
     <Content Include="Home\Views\Default.dothtml" />
     <Content Include="Home\Controls\Sample.dotcontrol" />
+    <Content Include="Content\site.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

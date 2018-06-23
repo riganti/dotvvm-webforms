@@ -3,6 +3,19 @@
 
 <dot:Content ContentPlaceHolderID="MainContent">
 
+    <h1>DotVVM Cheat Sheet for ASP.NET Web Forms Developers</h1>
+
+    <section class="chapter">
+        <div class="chapter-content intro">
+            <p>
+                <a href="https://github.com/riganti/dotvvm">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
+                Some of its concepts are inspired by ASP.NET Web Forms, however DotVVM addresses the most criticized pain-points of Web Forms: viewstate, ugly markup, bad testability and others.
+            </p>
+            <p>DotVVM can be used together with ASP.NET Web Forms in one application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM without rewriting the rest of the application.</p>
+            <p><a href="https://academy.dotvvm.com">Learning DotVVM</a> is a matter of days.</p>
+        </div>
+    </section>
+
     <cc:Sample SampleName="01-no-form" />
     <cc:Sample SampleName="02-no-runat-server-and-control-ids" />
     <cc:Sample SampleName="03-no-viewstate" />
@@ -17,5 +30,28 @@
     <cc:Sample SampleName="12-linking-to-routes" />
     <cc:Sample SampleName="13-gridview" />
     <cc:Sample SampleName="14-fileupload" />
+
+    <section class="chapter">
+        <div class="chapter-content intro">
+            <h2>Other Resources</h2>
+
+            <p><a href="https://www.dotvvm.com">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892">free extension for Visual Studio 2017</a>.</p>
+
+            <ul>
+                <li><a href="https://www.dotvvm.com">Home Page</a></li>
+                <li><a href="https://www.dotvvm.com/docs">Documentation</a></li>
+                <li><a href="https://academy.dotvvm.com">DotVVM Academy</a></li>
+            </ul>
+
+            <p>Our mission is to make DotVVM available to everyone, including schools, freelancers or open source developers. That's why the framework is open source and there is a free extension for Visual Studio.</p>
+            <p>To get even more value from DotVVM, check out our commercial controls:</p>
+
+            <ul>
+                <li><a href="https://www.dotvvm.com/landing/bootstrap-for-dotvvm">Bootstrap for DotVVM</a> - more than 40 controls wrapping all Bootstrap widgets</li>
+                <li><a href="https://www.dotvvm.com/landing/business-pack">DotVVM Business Pack</a> - a set of 25 enterprise-grade controls for large line of business applications</li>
+                <li><a href="https://www.dotvvm.com/landing/dotvvm-for-visual-studio-professional-extension">DotVVM for Visual Studio Professional</a> - paid extension with full IntelliSense and other DotVVM-related features</li>
+            </ul>
+        </div>
+    </section>
 
 </dot:Content>

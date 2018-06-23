@@ -28,7 +28,9 @@ protected void Page_PreRender(object sender, EventArgs e)
 
 -------------------------------------
 
-DotVVM `Repeater` is similar. The `ItemTemplate` element is optional and you can specify the wrapper tag using `WrapperTagName` property. And there's data-binding.
+In DotVVM, there are no DataSource controls. Data-binding is used everywhere.
+
+The [Repeater](https://www.dotvvm.com/docs/controls/builtin/Repeater/2.0) in DotVVM is very similar to the Web Forms one. The `ItemTemplate` element is optional, and you can specify the wrapper tag using `WrapperTagName` property.
 
 ### Default.dothtml
 

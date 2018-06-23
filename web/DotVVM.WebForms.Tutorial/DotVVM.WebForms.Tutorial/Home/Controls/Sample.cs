@@ -13,7 +13,7 @@ using DotVVM.WebForms.Tutorial.Home.Services;
 namespace DotVVM.WebForms.Tutorial.Home.Controls
 {
     public class Sample : DotvvmMarkupControl
-    {
+    { 
 
         [MarkupOptions(AllowBinding = false, Required = true)]
         public string SampleName
