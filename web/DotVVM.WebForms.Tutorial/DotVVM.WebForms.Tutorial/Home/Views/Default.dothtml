@@ -6,19 +6,26 @@
     <a href="https://dotvvm.com/" target="_blank">
         <img src="../../Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
     </a>
-    
-    <h1>DotVVM Cheat Sheet for ASP.NET Web Forms Developers</h1>
-    <h3>
-        <a href="https://github.com/riganti/dotvvm" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
-        Some of its concepts are inspired by ASP.NET Web Forms, however DotVVM addresses the most criticized pain-points of Web Forms: viewstate, ugly markup, bad testability and others.
-    </h3>
-    
-    <h4>
-        DotVVM can be used together with ASP.NET Web Forms in one application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM without rewriting the rest of the application.
-    </h4>
-    <p>
-        <a href="https://academy.dotvvm.com" target="_blank">Learning DotVVM</a> is a matter of days.
-    </p>
+
+    <section class="intro">
+
+        <h1>DotVVM Cheat Sheet for ASP.NET Developers</h1>
+
+        <p class="intense">
+            <a href="https://github.com/riganti/dotvvm" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
+        </p>
+        <p>
+            It is inspired by ASP.NET Web Forms, but addresses the most criticized pain-points of Web Forms: viewstate, ugly markup and bad testability.
+        </p>
+
+        <p>
+            DotVVM can be used together with ASP.NET Web Forms in the same application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM
+            without rewriting the rest.
+        </p>
+        <p>
+            <a href="https://academy.dotvvm.com" target="_blank">Learning DotVVM</a> is a matter of days.
+        </p>
+    </section>
 
 </dot:Content>
 
@@ -43,18 +50,13 @@
         <h2>Other Resources</h2>
 
         <div>
-            <h5>
+            <p class="intense">
                 <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892" target="_blank">free extension for Visual Studio 2017</a>.
-            </h5>
-            <ul>
-                <li><a href="https://www.dotvvm.com" target="_blank">Home Page</a></li>
-                <li><a href="https://www.dotvvm.com/docs" target="_blank">Documentation</a></li>
-                <li><a href="https://academy.dotvvm.com" target="_blank">DotVVM Academy</a></li>
-            </ul>
+            </p>
 
-            <h5>
+            <p class="intense">
                 Our mission is to make DotVVM available to everyone, including schools, freelancers or open source developers. That's why the framework is open source and there is a free extension for Visual Studio.
-            </h5>
+            </p>
             
             <p>To get even more value from DotVVM, check out our commercial controls:</p>
             <ul>

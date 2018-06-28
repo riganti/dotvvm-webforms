@@ -2,7 +2,6 @@
   font-family: "Segoe UI", SegoeUI, "Segoe WP", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 2;
   color: black; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +39,10 @@ a {
 code {
   font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif; }
 
+.intense {
+  font-size: 130%;
+  font-weight: 100; }
+
 * {
   box-sizing: border-box; }
 
@@ -71,6 +74,9 @@ footer.chapter {
 
 footer img {
   width: 100px; }
+
+.intro {
+  line-height: 2.5; }
 
 .chapter {
   padding: 2.4rem 1.8rem; }
