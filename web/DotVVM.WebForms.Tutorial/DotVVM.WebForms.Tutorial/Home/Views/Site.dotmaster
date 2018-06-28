@@ -48,7 +48,7 @@
     <footer class="chapter">
         <div>
             <a href="https://riganti.cz/" target="_blank">
-                <img src="../../Content/Images/logo-riganti.png" alt="Riganti.cz" />
+                <img src="~/Content/Images/logo-riganti.png" alt="Riganti.cz" />
             </a>
         </div>
     </footer>

@@ -4,7 +4,7 @@
 <dot:Content ContentPlaceHolderID="Header">
 
     <a href="https://dotvvm.com/" target="_blank">
-        <img src="../../Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
+        <img src="~/Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
     </a>
 
     <section class="intro">

@@ -360,6 +360,7 @@
     <Content Include="Content\Styles\_chapters.scss" />
     <Content Include="Content\Styles\_animations.scss" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\DotvvmWebProduction - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
