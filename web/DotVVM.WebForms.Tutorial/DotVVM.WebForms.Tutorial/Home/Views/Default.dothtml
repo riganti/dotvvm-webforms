@@ -1,20 +1,28 @@
 ﻿@viewModel DotVVM.WebForms.Tutorial.Home.ViewModels.DefaultViewModel, DotVVM.WebForms.Tutorial
 @masterPage Home/Views/Site.dotmaster
 
-<dot:Content ContentPlaceHolderID="MainContent">
+<dot:Content ContentPlaceHolderID="Header">
 
+    <a href="https://dotvvm.com/" target="_blank">
+        <img src="../../Content/Images/logo-dotvvm.svg" />
+    </a>
+    
     <h1>DotVVM Cheat Sheet for ASP.NET Web Forms Developers</h1>
+    <h3>
+        <a href="https://github.com/riganti/dotvvm">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
+        Some of its concepts are inspired by ASP.NET Web Forms, however DotVVM addresses the most criticized pain-points of Web Forms: viewstate, ugly markup, bad testability and others.
+    </h3>
+    
+    <h4>
+        DotVVM can be used together with ASP.NET Web Forms in one application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM without rewriting the rest of the application.
+    </h4>
+    <p>
+        <a href="https://academy.dotvvm.com">Learning DotVVM</a> is a matter of days.
+    </p>
 
-    <section class="chapter">
-        <div class="chapter-content intro">
-            <p>
-                <a href="https://github.com/riganti/dotvvm">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
-                Some of its concepts are inspired by ASP.NET Web Forms, however DotVVM addresses the most criticized pain-points of Web Forms: viewstate, ugly markup, bad testability and others.
-            </p>
-            <p>DotVVM can be used together with ASP.NET Web Forms in one application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM without rewriting the rest of the application.</p>
-            <p><a href="https://academy.dotvvm.com">Learning DotVVM</a> is a matter of days.</p>
-        </div>
-    </section>
+</dot:Content>
+
+<dot:Content ContentPlaceHolderID="MainContent">
 
     <cc:Sample SampleName="01-no-form" />
     <cc:Sample SampleName="02-no-runat-server-and-control-ids" />
@@ -32,20 +40,23 @@
     <cc:Sample SampleName="14-fileupload" />
 
     <section class="chapter">
-        <div class="chapter-content intro">
-            <h2>Other Resources</h2>
+        <h2>Other Resources</h2>
 
-            <p><a href="https://www.dotvvm.com">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892">free extension for Visual Studio 2017</a>.</p>
-
+        <div>
+            <h5>
+                <a href="https://www.dotvvm.com">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892">free extension for Visual Studio 2017</a>.
+            </h5>
             <ul>
                 <li><a href="https://www.dotvvm.com">Home Page</a></li>
                 <li><a href="https://www.dotvvm.com/docs">Documentation</a></li>
                 <li><a href="https://academy.dotvvm.com">DotVVM Academy</a></li>
             </ul>
 
-            <p>Our mission is to make DotVVM available to everyone, including schools, freelancers or open source developers. That's why the framework is open source and there is a free extension for Visual Studio.</p>
+            <h5>
+                Our mission is to make DotVVM available to everyone, including schools, freelancers or open source developers. That's why the framework is open source and there is a free extension for Visual Studio.
+            </h5>
+            
             <p>To get even more value from DotVVM, check out our commercial controls:</p>
-
             <ul>
                 <li><a href="https://www.dotvvm.com/landing/bootstrap-for-dotvvm">Bootstrap for DotVVM</a> - more than 40 controls wrapping all Bootstrap widgets</li>
                 <li><a href="https://www.dotvvm.com/landing/business-pack">DotVVM Business Pack</a> - a set of 25 enterprise-grade controls for large line of business applications</li>

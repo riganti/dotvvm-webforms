@@ -1,0 +1,11 @@
+﻿@import "_variables.scss";
+
+a img {
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+
+    &:hover {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}

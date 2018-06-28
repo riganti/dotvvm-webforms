@@ -1,0 +1,51 @@
+﻿@import "_variables.scss";
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10*$padding 6*$padding 6*$padding 6*$padding;
+    background: url("../Images/pattern.png");
+    background-size: auto 189px;
+    background-repeat: repeat-x;
+
+
+    img {
+        width: 340px;
+        max-width: 100%;
+    }
+
+    h1 {
+        margin: 8*$padding 0 0 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    h4 {
+        margin-top: 5*$padding;
+        color: $color-secondary;
+    }
+}
+
+main {
+}
+
+footer {
+    &.chapter {
+        background-color: unset !important;
+    }
+
+    img {
+        width: 100px;
+    }
+}
+
+
+

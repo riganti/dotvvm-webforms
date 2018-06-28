@@ -6,15 +6,25 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="~/Content/site.min.css" rel="stylesheet" />
+    <link href="~/Content/Styles/style.min.css" rel="stylesheet" />
     <script src="~/Scripts/syntax/syntax.js"></script>
     <script src="~/Scripts/syntax/syntax_csharp.js"></script>
     <script src="~/Scripts/syntax/syntax_dothtml.js"></script>
 </head>
 <body>
-
-    <dot:ContentPlaceHolder ID="MainContent" />
-
+    <header>
+        <dot:ContentPlaceHolder ID="Header" />
+    </header>
+    <main>
+        <dot:ContentPlaceHolder ID="MainContent" />
+    </main>
+    <footer class="chapter">
+        <div>
+            <a href="https://riganti.cz/" target="_blank">
+                <img src="../../Content/Images/logo-riganti.png" />
+            </a>
+        </div>
+    </footer>
     <script>
         TinySyntaxHighlighter.initialize();
     </script>

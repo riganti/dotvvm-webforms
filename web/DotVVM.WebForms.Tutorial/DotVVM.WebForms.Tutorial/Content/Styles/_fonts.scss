@@ -1,0 +1,54 @@
+﻿@import "_variables.scss";
+
+html {
+    font-family: "Segoe UI", SegoeUI, "Segoe WP", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-header;
+    max-width: 1680px;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+a {
+    color: $color-primary;
+    transition: all ease-in .1s;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:active, &:hover {
+        color: $color-secondary;
+    }
+}
+
+code {
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+}

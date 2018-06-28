@@ -1,7 +1,7 @@
 ﻿[
   {
-    "outputFile": "Content/site.css",
-    "inputFile": "Content/site.scss"
+    "outputFile": "Content/Styles/style.css",
+    "inputFile": "Content/Styles/style.scss"
   },
   {
     "outputFile": "Scripts/syntax/syntax_dothtml.es5.js",

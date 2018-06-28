@@ -8,7 +8,6 @@ namespace DotVVM.WebForms.Tutorial.Home.ViewModels
 {
     public class SiteViewModel : DotvvmViewModelBase
     {
-
     }
 }
 

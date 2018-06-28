@@ -265,11 +265,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\site.css">
-      <DependentUpon>site.scss</DependentUpon>
+    <Content Include="Content\Images\logo-dotvvm.svg" />
+    <Content Include="Content\Images\pattern.png" />
+    <Content Include="Content\Images\logo-riganti.png" />
+    <Content Include="Content\Styles\style.css">
+      <DependentUpon>style.scss</DependentUpon>
     </Content>
-    <Content Include="Content\site.min.css">
-      <DependentUpon>site.css</DependentUpon>
+    <Content Include="Content\Styles\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\syntax\syntax.es5.js">
@@ -339,11 +342,16 @@
     <Content Include="Home\Views\Site.dotmaster" />
     <Content Include="Home\Views\Default.dothtml" />
     <Content Include="Home\Controls\Sample.dotcontrol" />
-    <Content Include="Content\site.scss" />
+    <Content Include="Content\Styles\style.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Styles\_variables.scss" />
+    <Content Include="Content\Styles\_fonts.scss" />
+    <Content Include="Content\Styles\_layout.scss" />
+    <Content Include="Content\Styles\_chapters.scss" />
+    <Content Include="Content\Styles\_animations.scss" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
