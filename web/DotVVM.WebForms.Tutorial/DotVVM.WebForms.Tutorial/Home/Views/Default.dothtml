@@ -4,12 +4,12 @@
 <dot:Content ContentPlaceHolderID="Header">
 
     <a href="https://dotvvm.com/" target="_blank">
-        <img src="../../Content/Images/logo-dotvvm.svg" />
+        <img src="../../Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
     </a>
     
     <h1>DotVVM Cheat Sheet for ASP.NET Web Forms Developers</h1>
     <h3>
-        <a href="https://github.com/riganti/dotvvm">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
+        <a href="https://github.com/riganti/dotvvm" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
         Some of its concepts are inspired by ASP.NET Web Forms, however DotVVM addresses the most criticized pain-points of Web Forms: viewstate, ugly markup, bad testability and others.
     </h3>
     
@@ -17,7 +17,7 @@
         DotVVM can be used together with ASP.NET Web Forms in one application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM without rewriting the rest of the application.
     </h4>
     <p>
-        <a href="https://academy.dotvvm.com">Learning DotVVM</a> is a matter of days.
+        <a href="https://academy.dotvvm.com" target="_blank">Learning DotVVM</a> is a matter of days.
     </p>
 
 </dot:Content>
@@ -44,12 +44,12 @@
 
         <div>
             <h5>
-                <a href="https://www.dotvvm.com">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892">free extension for Visual Studio 2017</a>.
+                <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> is open source and offers a <a href="https://marketplace.visualstudio.com/items?itemName=TomasHerceg.DotVVMforVisualStudio-17892" target="_blank">free extension for Visual Studio 2017</a>.
             </h5>
             <ul>
-                <li><a href="https://www.dotvvm.com">Home Page</a></li>
-                <li><a href="https://www.dotvvm.com/docs">Documentation</a></li>
-                <li><a href="https://academy.dotvvm.com">DotVVM Academy</a></li>
+                <li><a href="https://www.dotvvm.com" target="_blank">Home Page</a></li>
+                <li><a href="https://www.dotvvm.com/docs" target="_blank">Documentation</a></li>
+                <li><a href="https://academy.dotvvm.com" target="_blank">DotVVM Academy</a></li>
             </ul>
 
             <h5>
@@ -58,9 +58,9 @@
             
             <p>To get even more value from DotVVM, check out our commercial controls:</p>
             <ul>
-                <li><a href="https://www.dotvvm.com/landing/bootstrap-for-dotvvm">Bootstrap for DotVVM</a> - more than 40 controls wrapping all Bootstrap widgets</li>
-                <li><a href="https://www.dotvvm.com/landing/business-pack">DotVVM Business Pack</a> - a set of 25 enterprise-grade controls for large line of business applications</li>
-                <li><a href="https://www.dotvvm.com/landing/dotvvm-for-visual-studio-professional-extension">DotVVM for Visual Studio Professional</a> - paid extension with full IntelliSense and other DotVVM-related features</li>
+                <li><a href="https://www.dotvvm.com/landing/bootstrap-for-dotvvm" target="_blank">Bootstrap for DotVVM</a> - more than 40 controls wrapping all Bootstrap widgets</li>
+                <li><a href="https://www.dotvvm.com/landing/business-pack" target="_blank">DotVVM Business Pack</a> - a set of 25 enterprise-grade controls for large line of business applications</li>
+                <li><a href="https://www.dotvvm.com/landing/dotvvm-for-visual-studio-professional-extension" target="_blank">DotVVM for Visual Studio Professional</a> - paid extension with full IntelliSense and other DotVVM-related features</li>
             </ul>
         </div>
     </section>

@@ -127,6 +127,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Content\Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="DotvvmSamples\01-no-form\ViewModels\DefaultViewModel.cs" />
     <Compile Include="DotvvmSamples\02-no-runat-server-and-control-ids\ViewModels\DefaultViewModel.cs" />
     <Compile Include="DotvvmSamples\03-no-viewstate\ViewModels\DefaultViewModel.cs" />
@@ -265,6 +270,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\logo-dotvvm.png" />
     <Content Include="Content\Images\logo-dotvvm.svg" />
     <Content Include="Content\Images\pattern.png" />
     <Content Include="Content\Images\logo-riganti.png" />
@@ -366,7 +373,12 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\MyResources.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>

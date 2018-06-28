@@ -1,81 +1,48 @@
 ﻿@import "_variables.scss";
 
 .chapter {
-    display: grid;
-    grid-template-rows: auto;
-    max-width: 100%;
     padding: 4*$padding 3*$padding;
-
-    &.columns-2 {
-        grid-template-columns: 50% 50%;
-
-        h2 {
-            grid-column-end: span 2;
-        }
-    }
 
     &:nth-child(2n+1) {
         background-color: $color-section;
     }
 
-    h2 {
-        grid-row: 1;
-        grid-column: 1;
+    > *:not(.columns) {
         padding: 0 3*$padding;
     }
+}
 
-    div {
+.columns {
+    display: flex;
+    flex-direction: row;
+
+    > div {
+        flex: 1 1 50%;
+        overflow-x: hidden;
         padding: 0 3*$padding;
 
-        &:nth-child(2n+1) {
-            pre {
-                background-color: $color-code-background-primary;
-                border-color: $color-primary;
-            }
-        }
-
         pre {
+            max-width: 100%; 
             overflow-x: auto;
             background-color: $color-code-background-secondary;
             border: 1px solid $color-border;
-            border-radius: 4px;
+            border-radius: $border-radius;
             padding: $padding;
 
             code {
                 font-size: 0.875rem;
             }
         }
-    }
 
-    @media only screen and (max-width: 1024px) { 
-        display: block;
-    }
-        /*.chapter-content {
-        max-width: 1900px;
-        margin: 0px auto;
-
-        &.intro {
-            max-width: 1080px;
-        }
-
-        .column {
-            @media only screen and (min-width: 1024px) {
-                display: inline-block;
-                vertical-align: top;
-                width: calc(50% - 30px);
-
-                &:nth-child(2n) {
-                    padding-right: 10px;
-                }
-
-                &:nth-child(2n+1) {
-                    padding-left: 10px;
-                }
-
-                p {
-                    max-width: 600px;
-                }
+        &:nth-child(2n) {
+            pre {
+                background-color: $color-code-background-primary;
+                border-color: $color-primary;
             }
         }
-    }*/
     }
+
+    @media only screen and (max-width: 1024px) {
+        display: block;
+    }
+}

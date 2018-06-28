@@ -1,5 +1,9 @@
 ﻿@import "_variables.scss";
 
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0px;
     padding: 0px;
@@ -39,7 +43,7 @@ main {
 
 footer {
     &.chapter {
-        background-color: unset !important;
+        background-color: $color-background !important;
     }
 
     img {
