@@ -28,6 +28,10 @@ h5 {
   font-size: 1.3rem;
   font-weight: 300; }
 
+.intense {
+  font-size: 130%;
+  font-weight: 100; }
+
 a {
   color: #337ab7;
   transition: all ease-in .1s;
@@ -38,10 +42,6 @@ a {
 
 code {
   font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif; }
-
-.intense {
-  font-size: 130%;
-  font-weight: 100; }
 
 * {
   box-sizing: border-box; }
@@ -58,25 +58,37 @@ header {
   background: url("../Images/pattern.png");
   background-size: auto 189px;
   background-repeat: repeat-x; }
-  header img {
+
+.header-title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 100%; }
+  .header-title img {
     width: 340px;
-    max-width: 100%; }
-  header h1 {
-    margin: 4.8rem 0 0 0; }
-  header p {
-    margin: 0; }
-  header h4 {
-    margin-top: 3rem;
-    color: #27bf89; }
+    max-width: 100%;
+    margin: 0 2.4rem 0 0; }
+  .header-title h1 {
+    margin: 1.2rem 0 0.9rem 0; }
 
-footer.chapter {
-  background-color: #fff !important; }
-
-footer img {
-  width: 100px; }
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  footer.chapter {
+    background-color: #fff !important; }
+  footer img {
+    width: 100px; }
 
 .intro {
-  line-height: 2.5; }
+  line-height: 2.5;
+  max-width: 100%; }
+  .intro p {
+    margin: 0; }
+  .intro .intense {
+    margin-top: 2.4rem; }
 
 .chapter {
   padding: 2.4rem 1.8rem; }
@@ -107,11 +119,4 @@ footer img {
   @media only screen and (max-width: 1024px) {
     .columns {
       display: block; } }
-
-a img {
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out; }
-  a img:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
 

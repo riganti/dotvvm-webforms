@@ -17,24 +17,23 @@ header {
     background: url("../Images/pattern.png");
     background-size: auto 189px;
     background-repeat: repeat-x;
+}
 
+.header-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    max-width: 100%;
 
     img {
         width: 340px;
         max-width: 100%;
+        margin: 0 4*$padding 0 0;
     }
 
     h1 {
-        margin: 8*$padding 0 0 0;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    h4 {
-        margin-top: 5*$padding;
-        color: $color-secondary;
+        margin: 2*$padding 0 1.5*$padding 0;
     }
 }
 
@@ -42,6 +41,11 @@ main {
 }
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
     &.chapter {
         background-color: $color-background !important;
     }

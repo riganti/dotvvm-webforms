@@ -274,7 +274,6 @@
     <Content Include="Content\Images\logo-dotvvm.png" />
     <Content Include="Content\Images\logo-dotvvm.svg" />
     <Content Include="Content\Images\pattern.png" />
-    <Content Include="Content\Images\logo-riganti.png" />
     <Content Include="Content\Styles\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>

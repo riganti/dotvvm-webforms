@@ -46,9 +46,22 @@
         <dot:ContentPlaceHolder ID="MainContent" />
     </main>
     <footer class="chapter">
+        <h3>
+            <a href="https://dotvvm.com" target="_blank">
+                www.dotvvm.com
+            </a>
+        </h3>
         <div>
-            <a href="https://riganti.cz/" target="_blank">
-                <img src="~/Content/Images/logo-riganti.png" alt="Riganti.cz" />
+            <a href="https://www.dotvvm.com/docs/latest" target="_blank">
+                Documentation
+            </a>
+            |
+            <a href="https://www.dotvvm.com/docs/tutorials/introduction/latest" target="_blank">
+                Tutorials
+            </a>
+            |
+            <a href="https://www.dotvvm.com/docs/samples/latest" target="_blank">
+                Samples
             </a>
         </div>
     </footer>

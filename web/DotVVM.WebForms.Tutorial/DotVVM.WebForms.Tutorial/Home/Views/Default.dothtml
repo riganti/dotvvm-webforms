@@ -3,14 +3,14 @@
 
 <dot:Content ContentPlaceHolderID="Header">
 
-    <a href="https://dotvvm.com/" target="_blank">
-        <img src="~/Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
-    </a>
+    <div class="header-title">
+        <a href="https://dotvvm.com/" target="_blank">
+            <img src="~/Content/Images/logo-dotvvm.svg" alt="DotVVM.com" />
+        </a>
+        <h1>Cheat Sheet for ASP.NET Developers</h1>
+    </div>
 
     <section class="intro">
-
-        <h1>DotVVM Cheat Sheet for ASP.NET Developers</h1>
-
         <p class="intense">
             <a href="https://github.com/riganti/dotvvm" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
         </p>

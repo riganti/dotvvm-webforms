@@ -37,6 +37,11 @@ h5 {
     font-weight: 300;
 }
 
+.intense {
+    font-size: 130%;
+    font-weight: 100;
+}
+
 a {
     color: $color-primary;
     transition: all ease-in .1s;
@@ -50,9 +55,4 @@ a {
 
 code {
     font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
-}
-
-.intense {
-    font-size: 130%;
-    font-weight: 100;
 }

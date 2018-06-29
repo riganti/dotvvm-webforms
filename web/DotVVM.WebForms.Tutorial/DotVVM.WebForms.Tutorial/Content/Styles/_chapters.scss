@@ -2,6 +2,15 @@
 
 .intro {
     line-height: 2.5;
+    max-width: 100%;
+
+    p {
+        margin: 0;
+    }
+
+    .intense {
+        margin-top: 4*$padding;
+    }
 }
 
 .chapter {
