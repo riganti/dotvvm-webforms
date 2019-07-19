@@ -39,4 +39,4 @@ Any feedback is welcome - we're on [Gitter](https://gitter.im/riganti/dotvvm).
   </system.web>
 ```
 
-5. Use the controls to link between ASP.NET Web Forms and DotVVM routes (see [sample](src/DotVVM.Adapters.WebForms/TestSamples/Links/) app).
+5. Use the controls to link between ASP.NET Web Forms and DotVVM routes (see [sample](src/TestSamples/Links/) app).
