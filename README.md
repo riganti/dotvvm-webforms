@@ -25,7 +25,7 @@ Any feedback is welcome - we're on [Gitter](https://gitter.im/riganti/dotvvm).
 
 2. Install `Dotvvm.Adapters.WebForms` and `Microsoft.Owin.Host.SystemWeb` packages in the project.
 
-3. Add `Startup.cs` and `DotvvmStartup.cs` classes (see [sample](src/DotVVM.Adapters.WebForms/TestSamples/) app).
+3. Add `Startup.cs` and `DotvvmStartup.cs` classes (see [sample](/src/TestSamples/) app).
 
 4. Add the following registration to `web.config`:
 
