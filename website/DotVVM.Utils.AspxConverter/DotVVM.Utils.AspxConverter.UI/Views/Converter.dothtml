@@ -95,7 +95,7 @@
                     </ItemTemplate>
                     <EmptyDataTemplate>
                         <p><em>You're all set, we don't have any other suggestions.</em></p>
-                        <p>We'll be happy for any feedback in our <a href="https://github.com/riganti/dotvvm-webforms-converter" target="_blank">GitHub repo</a>.</p>
+                        <p>We'll be happy for any feedback in our <a href="https://github.com/riganti/dotvvm-webforms" target="_blank">GitHub repo</a>.</p>
                     </EmptyDataTemplate>
                 </dot:Repeater>
             </div>

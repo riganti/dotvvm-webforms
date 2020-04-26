@@ -286,3 +286,4 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/website/DotVVM.Utils.AspxConverter/DotVVM.Utils.AspxConverter.Tests/TokenizerRealFilesTests.cs
