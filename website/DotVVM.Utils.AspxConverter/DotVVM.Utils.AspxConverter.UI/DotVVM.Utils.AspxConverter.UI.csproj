@@ -10,11 +10,41 @@
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Data\01-no-form.md" />
+    <None Remove="Data\02-no-runat-server-and-control-ids.md" />
+    <None Remove="Data\03-no-viewstate.md" />
+    <None Remove="Data\04-master-pages.md" />
+    <None Remove="Data\05-data-binding-everywhere.md" />
+    <None Remove="Data\06-client-side-interactivity.md" />
+    <None Remove="Data\07-events.md" />
+    <None Remove="Data\08-repeater.md" />
+    <None Remove="Data\09-checkboxlist.md" />
+    <None Remove="Data\10-textbox-and-validation.md" />
+    <None Remove="Data\11-localization.md" />
+    <None Remove="Data\12-linking-to-routes.md" />
+    <None Remove="Data\13-gridview.md" />
+    <None Remove="Data\14-fileupload.md" />
     <None Remove="dotvvm_serialized_config.json.tmp" />
   </ItemGroup>
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\app.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\01-no-form.md" />
+    <Content Include="Data\02-no-runat-server-and-control-ids.md" />
+    <Content Include="Data\03-no-viewstate.md" />
+    <Content Include="Data\04-master-pages.md" />
+    <Content Include="Data\05-data-binding-everywhere.md" />
+    <Content Include="Data\06-client-side-interactivity.md" />
+    <Content Include="Data\07-events.md" />
+    <Content Include="Data\08-repeater.md" />
+    <Content Include="Data\09-checkboxlist.md" />
+    <Content Include="Data\10-textbox-and-validation.md" />
+    <Content Include="Data\11-localization.md" />
+    <Content Include="Data\12-linking-to-routes.md" />
+    <Content Include="Data\13-gridview.md" />
+    <Content Include="Data\14-fileupload.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="compilerconfig.json" />
