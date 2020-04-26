@@ -1,0 +1,226 @@
+﻿@import "_fonts.scss";
+@import "_layout.scss";
+@import "_chapters.scss";
+@import "_animations.scss";
+@import "_buttons.scss";
+
+body {
+    overflow: hidden;
+}
+
+header {
+    padding-bottom: $padding;
+}
+
+.nav {
+    li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 1em 3em;
+
+        &.active {
+            background-color: $color-primary;
+
+            a {
+                color: $color-background;
+            }
+        }
+    }
+}
+
+.panel {
+    border: solid 1px $color-code-background-primary;
+    margin-bottom: 1em;
+
+    .panel-heading {
+        background-color: $color-code-background-secondary;
+        padding: .5em .2em;
+    }
+}
+
+.step-1 {
+
+    div {
+        margin: 1em 0;
+        padding: 0 2em;
+    }
+
+    .code-editor {
+        width: 100%;
+        height: calc(100vh - 600px);
+        font-size: 16px;
+        font-family: Consolas, Courier New, Courier, monospace;
+    }
+
+    .buttons {
+        text-align: right;
+    }
+}
+
+.step-2 {
+    .toolbar {
+        padding: 0 2em;
+        text-align: right;
+        margin-top: -2em;
+        margin-bottom: 2em;
+    }
+
+    .scrollable-area {
+        margin-bottom: 1em;
+        display: flex;
+
+        > div {
+            padding: 0 2em;
+            height: calc(100vh - 600px);
+            overflow-y: auto;
+
+            &:first-child {
+                flex: 6;
+                background-color: $color-code-background-secondary;
+            }
+
+            &:last-child {
+                flex: 4;
+            }
+        }
+    }
+
+    .panel {
+        .expand-button {
+            display: none;
+        }
+
+        .collapse-button {
+            display: inline;
+        }
+
+        &.collapsed {
+            .group-items {
+                display: none;
+            }
+
+            .expand-button {
+                display: inline;
+            }
+
+            .collapse-button {
+                display: none;
+            }
+        }
+
+        .group-header {
+            width: 100%;
+            table-layout: fixed;
+
+            tr {
+                td {
+                    padding: .5em .2em;
+                    text-align: center;
+
+                    &:first-child {
+                        width: 60%;
+                        text-align: left;
+
+                        a {
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .group-items {
+            width: 100%;
+            table-layout: fixed;
+
+            tr {
+                td {
+                    padding: .5em .2em;
+                    text-align: center;
+
+                    &:first-child {
+                        width: 60%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.step-3 {
+    padding: 0 2em;
+
+    .toolbar {
+        float: right;
+    }
+
+    .panel-heading {
+        background-color: $color-code-background-primary;
+        padding: 1em 0 1em 1em;
+        font-weight: bold;
+    }
+
+    .panel-body {
+        background-color: $color-code-background-secondary;
+    }
+}
+
+pre {
+    overflow-x: hidden;
+    text-wrap: normal;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: .5em;
+
+    code {
+        font-size: 16px;
+        font-family: Consolas, Courier New, Courier, monospace;
+
+        b {
+            font-weight: normal;
+
+            &.y {
+                background-color: yellow;
+            }
+
+            &.b {
+                color: blue;
+            }
+
+            &.m {
+                color: maroon;
+            }
+
+            &.r {
+                color: red;
+            }
+
+            &.g {
+                color: green;
+            }
+
+            span {
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-color: green;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @keyframes highlight {
+        from {
+            background-color: #ff00ff;
+        }
+
+        to {
+            background-color: transparent;
+        }
+    }
+
+    .highlight {
+        animation: highlight 2s;
+    }
+}

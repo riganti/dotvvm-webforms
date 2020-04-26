@@ -1,0 +1,68 @@
+﻿@viewModel DotVVM.Utils.AspxConverter.UI.ViewModels.MasterPageViewModel, DotVVM.Utils.AspxConverter.UI
+@import DotVVM.Utils.AspxConverter.UI.Resources
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{{resource: Strings.ProjectTitle}}</title>
+    <meta name="description=" content="{{resource: Strings.ProjectDescription}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="RIGANTI">
+    <meta name="keywords" content="Open source, ASP.NET, DotVVM, MVVM framework, Visual Studio Extension, HTML, C#, No JavaScript, Development, Frontend, ASP.NET Core Support, ASP.NET Support, Enterprise Web Apps, Line of business, Cheat Sheet, Web Forms, legacy app">
+    <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
+    <!-- Google+ -->
+    <meta itemprop="name" content="{{resource: Strings.ProjectTitle}}" />
+    <meta itemprop="description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta itemprop="image" content="~/img/logo-dotvvm.png" />
+    <!-- Facebook -->
+    <meta property="og:title" content="{{resource: Strings.ProjectTitle}}" />
+    <meta property="og:description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta property="og:image" content="~/img/logo-dotvvm.png" />
+    <meta property="og:url" content="{{resource: Strings.ProjectUrl}}" />
+    <meta itemprop="url" content="{{resource: Strings.ProjectUrl}}" />
+    <!-- Google -->
+    <meta name="title" content="{{resource: Strings.ProjectTitle}}" />
+    <meta name="description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta name="image" content="~/img/logo-dotvvm.png" />
+    <!-- Twitter -->
+    <meta name="twitter:title" content="{{resource: Strings.ProjectTitle}}" />
+    <meta name="twitter:description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta name="twitter:image" content="~/img/logo-dotvvm.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+</head>
+<body Validator.InvalidCssClass="has-error">
+
+    <header>
+        <menu>
+            <li class-active="{resource: Context.Route.RouteName == "Default"}">
+                <dot:RouteLink RouteName="Default">DotVVM Cheat Sheet</dot:RouteLink>
+            </li>
+            <li class-active="{resource: Context.Route.RouteName == "Converter"}">
+                <dot:RouteLink RouteName="Converter">ASPX to DotVVM Converter</dot:RouteLink>
+            </li>
+        </menu>
+
+        <div class="header-wrapper">
+            <dot:ContentPlaceHolder ID="Header" />
+        </div>
+    </header>
+    <main>
+        <dot:ContentPlaceHolder ID="MainContent" />
+    </main>
+    <footer class="chapter">
+        <h3>
+            <a href="https://dotvvm.com" target="_blank">www.dotvvm.com</a>
+        </h3>
+        <div>
+            <a href="https://www.dotvvm.com/docs/latest" target="_blank">Documentation</a>
+            |
+            <a href="https://www.dotvvm.com/modernize" target="_blank">Modernize Web Forms apps</a>
+            |
+            <a href="https://www.dotvvm.com/samples" target="_blank">Samples</a>
+        </div>
+    </footer>
+
+</body>
+</html>

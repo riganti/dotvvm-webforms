@@ -1,0 +1,123 @@
+﻿@viewModel DotVVM.Utils.AspxConverter.UI.ViewModels.ConverterViewModel, DotVVM.Utils.AspxConverter.UI
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="Header">
+
+    <div class="header-title">
+        <a href="https://www.dotvvm.com/" target="_blank">
+            <img src="~/img/logo-dotvvm.svg" alt="DotVVM.com" />
+        </a>
+        <h1>ASPX to DotVVM Converter</h1>
+    </div>
+
+    <section class="intro">
+        <p class="intense">
+            This online tool helps with conversion of ASPX pages and ASCX user controls into DotVVM files.
+        </p>
+        <p>
+            Creating a 100% reliable converter is not possible, but we believe that this tool will help you at least with simple scenarios.
+        </p>
+    </section>
+</dot:Content>
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <ul class="nav">
+        <li Class-active="{value: TabIndex == 0}">
+            <dot:LinkButton Click="{staticCommand: TabIndex = 0}">Step 1: Paste your ASPX</dot:LinkButton>
+        </li>
+        <li Class-active="{value: TabIndex == 1}">
+            <dot:LinkButton Click="{command: SubmitCode()}">Step 2: See suggestions</dot:LinkButton>
+        </li>
+        <li Class-active="{value: TabIndex == 2}">
+            <dot:LinkButton Click="{staticCommand: TabIndex = 2}">Step 3: See generated C# declarations</dot:LinkButton>
+        </li>
+    </ul>
+
+    <div class="step-1" IncludeInPage="{value: TabIndex == 0}">
+        <div Validator.Value="{value: OriginalMarkup}">
+            <dot:TextBox Text="{value: OriginalMarkup}" Type="MultiLine"
+                         class="code-editor" />
+        </div>
+        <div class="buttons">
+            <dot:Button Text="Continue" class="button" Click="{command: SubmitCode()}" />
+        </div>
+    </div>
+
+    <div class="step-2" IncludeInPage="{value: TabIndex == 1}">
+        <div class="toolbar">
+            <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).OriginalMarkup());">Copy Code</a>
+        </div>
+        <div class="scrollable-area">
+            <div>
+                <pre><dot:HtmlLiteral Html="{value: DisplayHtml}" WrapperTagName="code" /></pre>
+            </div>
+            <div>
+                <dot:Repeater DataSource="{value: SuggestionGroups}" Validation.Enabled="false" class="panel-group">
+                    <ItemTemplate>
+                        <div class="panel collapsed">
+                            <div class="panel-heading">
+                                <table class="group-header">
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;" onclick="togglePanel(this);">
+                                                <span class="expand-button glyphicon glyphicon-chevron-down"></span>
+                                                <span class="collapse-button glyphicon glyphicon-chevron-up"></span>
+
+                                                <dot:HtmlLiteral Html="{value: Description}" WrapperTagName="span" />
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <strong>({{value: Suggestions.Count}}x)</strong>
+                                        </td>
+                                        <td>
+                                            <dot:LinkButton Click="{command: _root.ApplyFixes(_this)}">Apply All Fixes</dot:LinkButton>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <table class="group-items">
+                                <dot:Repeater DataSource="{value: Suggestions}" WrapperTagName="tbody">
+                                    <tr>
+                                        <td>
+                                            <dot:HtmlLiteral Html="{value: _parent.Description}" />
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" onclick="showSuggestion(ko.dataFor(this).SpanIndex());">Show</a>
+                                        </td>
+                                        <td>
+                                            <dot:LinkButton Click="{command: _root.ApplyFix(_this)}">Apply Fix</dot:LinkButton>
+                                        </td>
+                                    </tr>
+                                </dot:Repeater>
+                            </table>
+                        </div>
+                    </ItemTemplate>
+                    <EmptyDataTemplate>
+                        <p><em>You're all set, we don't have any other suggestions.</em></p>
+                        <p>We'll be happy for any feedback in our <a href="https://github.com/riganti/dotvvm-webforms-converter" target="_blank">GitHub repo</a>.</p>
+                    </EmptyDataTemplate>
+                </dot:Repeater>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-3" IncludeInPage="{value: TabIndex == 2}">
+        <dot:Repeater DataSource="{value: CsharpFiles}">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="toolbar">
+                        <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).Code());">Copy Code</a>
+                    </div>
+
+                    {{value: ClassName}}.cs
+                </div>
+                <div class="panel-body">
+                    <pre><dot:HtmlLiteral Html="{value: Code}" WrapperTagName="code" /></pre>
+                </div>
+            </div>
+        </dot:Repeater>
+    </div>
+
+    <dot:RequiredResource Name="converter" />
+</dot:Content>
