@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyTitle>DotVVM.Adapters.WebForms</AssemblyTitle>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotVVM.Owin" Version="2.0.0" />
+    <PackageReference Include="DotVVM.Owin" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>
