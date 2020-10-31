@@ -90,7 +90,7 @@ namespace DotVVM.Adapters.WebForms.Controls.DotVVM
                 parameters[item.Key] = item.Value;
             }
 
-            var url = RouteTable.Routes.GetVirtualPath(null, RouteName, parameters).VirtualPath;
+            var url = WebFormsRouteLinkHelpers.EvaluateRouteUrl(RouteName, this, context);
             writer.AddAttribute("href", url);
 
             WebFormsRouteLinkHelpers.WriteRouteLinkHrefAttribute(this, writer, context);

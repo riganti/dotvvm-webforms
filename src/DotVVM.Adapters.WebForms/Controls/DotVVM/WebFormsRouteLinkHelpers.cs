@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Routing;
 using DotVVM.Framework.Binding;
 using DotVVM.Framework.Binding.Expressions;
+using DotVVM.Framework.Configuration;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.Hosting;
 using DotVVM.Framework.Routing;
@@ -16,6 +17,9 @@ namespace DotVVM.Adapters.WebForms.Controls.DotVVM
 {
     public static class WebFormsRouteLinkHelpers
     {
+
+        private static readonly JsonSerializerSettings jsonSettings = DefaultSerializerSettingsProvider.Instance.GetSettingsCopy();
+
         public static void WriteRouteLinkHrefAttribute(RouteLink control, IHtmlWriter writer, IDotvvmRequestContext context)
         {
             // Render client-side knockout expression only if there exists a parameter with value binding
@@ -54,7 +58,7 @@ namespace DotVVM.Adapters.WebForms.Controls.DotVVM
             }
 
             // generate the URL
-            return route.GetVirtualPath(HttpContext.Current.Request.RequestContext, parameters).VirtualPath;
+            return "~/" + route.GetVirtualPath(HttpContext.Current.Request.RequestContext, parameters)?.VirtualPath;
         }
 
         private static string GenerateUrlSuffixCore(string urlSuffix, RouteLink control)
@@ -111,11 +115,11 @@ namespace DotVVM.Adapters.WebForms.Controls.DotVVM
                 EnsureValidBindingType(param.Value as IBinding);
 
                 expression = (param.Value as IValueBinding)?.GetKnockoutBindingExpression(control)
-                             ?? JsonConvert.SerializeObject((param.Value as IStaticValueBinding)?.Evaluate(control), DefaultViewModelSerializer.CreateDefaultSettings());
+                             ?? JsonConvert.SerializeObject((param.Value as IStaticValueBinding)?.Evaluate(control), jsonSettings);
             }
             else
             {
-                expression = JsonConvert.SerializeObject(param.Value, DefaultViewModelSerializer.CreateDefaultSettings());
+                expression = JsonConvert.SerializeObject(param.Value, jsonSettings);
             }
             return JsonConvert.SerializeObject(caseSensitive ? param.Key : param.Key.ToLower()) + ": " + expression;
         }

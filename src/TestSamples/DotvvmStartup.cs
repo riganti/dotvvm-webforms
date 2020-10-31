@@ -21,6 +21,7 @@ namespace TestSamples
         private void RegisterRoutes(DotvvmConfiguration config, string applicationPath)
         {
             config.RouteTable.Add("Links", "dot-links", "Links/Views/Links.dothtml");
+            config.RouteTable.Add("LinksSubfolder", "dot-links/subfolder", "Links/Views/Links.dothtml");
             config.RouteTable.Add("Links_Test", "dot-links-test", "Links/Views/Links.dothtml");
             config.RouteTable.Add("Links_TestWithParams", "dot-links-test/{id}/{title}", "Links/Views/Links.dothtml");
             config.RouteTable.Add("Links_TestWithDefaults", "dot-links-test/{id}/{title?}", "Links/Views/Links.dothtml", new { title = "default" });
