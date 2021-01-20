@@ -20,8 +20,11 @@ namespace DotVVM.Utils.AspxConverter.Workspace
             {
                 if (suggestionsMap.TryGetValue(token, out var suggestions))
                 {
-                    sb.Append($"<span data-index='{suggestions.First().SpanIndex}'>");
-                    
+                    foreach (var suggestion in suggestions)
+                    {
+                        sb.Append($"<span data-index='{suggestion.SpanIndex}'>");
+                    }
+
                     data.AddRange(suggestions.Select(s => new SuggestionData()
                     {
                         Description = s.Suggestion.Description,
@@ -61,7 +64,10 @@ namespace DotVVM.Utils.AspxConverter.Workspace
                     {
                         if (suggestionsMap.TryGetValue(attribute, out var attributeSuggestions))
                         {
-                            sb.Append($"<span data-index='{attributeSuggestions.First().SpanIndex}'>");
+                            foreach (var attributeSuggestion in attributeSuggestions)
+                            {
+                                sb.Append($"<span data-index='{attributeSuggestion.SpanIndex}'>");
+                            }
 
                             data.AddRange(attributeSuggestions.Select(s => new SuggestionData()
                             {
@@ -79,7 +85,10 @@ namespace DotVVM.Utils.AspxConverter.Workspace
 
                         if (attributeSuggestions != null)
                         {
-                            sb.Append($"</span>");
+                            foreach (var attributeSuggestion in attributeSuggestions)
+                            {
+                                sb.Append($"</span>");
+                            }
                         }
                     }
                     sb.Append($"<b class='b'>{WebUtility.HtmlEncode(beginTag.AfterAttributesFragment)}</b>");
@@ -93,7 +102,10 @@ namespace DotVVM.Utils.AspxConverter.Workspace
 
                 if (suggestions != null)
                 {
-                    sb.Append($"</span>");
+                    foreach (var suggestion in suggestions)
+                    {
+                        sb.Append($"</span>");
+                    }
                 }
             }
 

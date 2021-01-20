@@ -17,11 +17,12 @@
 
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
+    var displayArea = document.querySelector(".scrollable-area > div").getBoundingClientRect();
     return (
-        rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.top >= displayArea.top &&
+        rect.left >= displayArea.left &&
+        rect.bottom <= displayArea.bottom &&
+        rect.right <= displayArea.right
     );
 }
 
