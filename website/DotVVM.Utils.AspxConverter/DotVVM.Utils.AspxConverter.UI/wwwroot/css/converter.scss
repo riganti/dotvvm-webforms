@@ -4,10 +4,6 @@
 @import "_animations.scss";
 @import "_buttons.scss";
 
-body {
-    overflow: hidden;
-}
-
 header {
     padding-bottom: $padding;
 }
@@ -47,6 +43,7 @@ header {
 
     .code-editor {
         width: 100%;
+        min-height: 500px;
         height: calc(100vh - 600px);
         font-size: 16px;
         font-family: Consolas, Courier New, Courier, monospace;
@@ -71,6 +68,7 @@ header {
 
         > div {
             padding: 0 2em;
+            min-height: 500px;
             height: calc(100vh - 600px);
             overflow-y: auto;
 
