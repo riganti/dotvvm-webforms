@@ -53,10 +53,10 @@
     </main>
     <footer class="chapter">
         <h3>
-            <a href="https://dotvvm.com" target="_blank">www.dotvvm.com</a>
+            <a href="https://www.dotvvm.com" target="_blank">www.dotvvm.com</a>
         </h3>
         <div>
-            <a href="https://www.dotvvm.com/docs/latest" target="_blank">Documentation</a>
+            <a href="https://www.dotvvm.com/docs" target="_blank">Documentation</a>
             |
             <a href="https://www.dotvvm.com/modernize" target="_blank">Modernize Web Forms apps</a>
             |
