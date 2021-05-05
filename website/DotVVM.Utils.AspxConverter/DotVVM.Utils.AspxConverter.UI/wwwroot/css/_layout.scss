@@ -37,54 +37,50 @@ body {
     }
 }
 
-header {
-    padding: 5*$padding 6*$padding 6*$padding 6*$padding;
+.header {
     background-color: $color-section;
+    --padding-x: 56px;
+    --padding-y: 80px;
+    padding: var(--padding-y) var(--padding-x);
 
-    menu {
-        float: right;
-
-        li {
-            display: inline-block;
-            list-style-type: none;
-            background-color: $color-border;
-            padding: 1em 3em;
-
-            a, a:hover {
-                color: $color-header;
-            }
-
-            &.active {
-                background-color: $color-primary;
-
-                a, a:hover {
-                    color: $color-background;
-                }
-            }
-        }
+    @media only screen and (max-width: 1440px) {
+        --padding-x: 32px;
     }
 
-    .header-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    @media only screen and (max-width: 1366px) {
+        --padding-x: 24px;
+        --padding-y: 56px;
     }
 
-    .header-title {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        max-width: 100%;
+    @media only screen and (max-width: 1024px) {
+        --padding-x: 16px;
+        --padding-y: 48px;
+    }
 
-        img {
-            width: 200px;
-            max-width: 100%;
-            margin: 0 4*$padding 0 0;
-        }
 
-        h1 {
-            margin: 2*$padding 0 1.5*$padding 0;
+    &__content {
+    }
+
+    &__title {
+        font-size: xx-large;
+        margin-top: 0;
+    }
+
+    &__desc {
+    }
+
+    &__buttons {
+        margin-top: 24px;
+        display: inline-flex;
+        flex-flow: row wrap;
+        width: max-content;
+        align-items: stretch;
+        justify-content: flex-start;
+        grid-gap: 16px;
+
+        @media screen and (max-width: 768px) {
+            grid-gap: 8px;
+            width: 100%;
         }
     }
 }

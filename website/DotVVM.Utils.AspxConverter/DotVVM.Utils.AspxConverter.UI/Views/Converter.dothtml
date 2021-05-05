@@ -5,33 +5,36 @@
     <dot:RequiredResource Name="converter-css" />
     <dot:RequiredResource Name="nav-and-footer-css" />
 
-    <div class="header-title">
-        <h1>ASPX to DotVVM Converter</h1>
-    </div>
+    <h1 class="header__title" InnerText="ASPX to DotVVM Converter" />
 
-    <section class="intro">
+    <div class="header__desc">
         <p class="intense">
             This online tool helps with conversion of ASPX pages and ASCX user controls into DotVVM files.
         </p>
         <p>
             Creating a 100% reliable converter is not possible, but we believe that this tool will help you at least with simple scenarios.
         </p>
-    </section>
+    </div>
 </dot:Content>
 
 <dot:Content ContentPlaceHolderID="MainContent">
 
-    <ul class="page-nav">
-        <li Class-active="{value: TabIndex == 0}">
-            <dot:LinkButton Click="{staticCommand: TabIndex = 0}">Step 1: Paste your ASPX</dot:LinkButton>
-        </li>
-        <li Class-active="{value: TabIndex == 1}">
-            <dot:LinkButton Click="{command: SubmitCode()}">Step 2: See suggestions</dot:LinkButton>
-        </li>
-        <li Class-active="{value: TabIndex == 2}">
-            <dot:LinkButton Click="{staticCommand: TabIndex = 2}">Step 3: See generated C# declarations</dot:LinkButton>
-        </li>
-    </ul>
+    <div class="page-nav">
+        <dot:LinkButton Click="{staticCommand: TabIndex = 0}"
+                        class="button button--long"
+                        Class-button--secondary="{value: TabIndex != 0}"
+                        Text="Step 1: Paste your ASPX" />
+
+        <dot:LinkButton Click="{command: SubmitCode()}"
+                        class="button button--long"
+                        Class-button--secondary="{value: TabIndex != 1}"
+                        Text="Step 2: See suggestions" />
+
+        <dot:LinkButton Click="{staticCommand: TabIndex = 2}"
+                        class="button button--long"
+                        Class-button--secondary="{value: TabIndex != 3}"
+                        Text="Step 3: See generated C# declarations" />
+    </div>
 
     <div class="step-1" IncludeInPage="{value: TabIndex == 0}">
         <div Validator.Value="{value: OriginalMarkup}">

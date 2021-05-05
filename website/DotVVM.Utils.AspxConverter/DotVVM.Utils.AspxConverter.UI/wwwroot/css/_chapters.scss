@@ -14,11 +14,27 @@
 }
 
 .chapter {
-    padding: 4*$padding 3*$padding;
+    --padding-x: 56px;
+    --padding-y: 48px;
+    padding: var(--padding-y) var(--padding-x);
     background-color: white;
 
     &:nth-child(even) {
         background-color: $color-section;
+    }
+
+
+    @media only screen and (max-width: 1440px) {
+        --padding-x: 32px;
+    }
+
+    @media only screen and (max-width: 1366px) {
+        --padding-x: 24px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        --padding-x: 16px;
+        --padding-y: 32px;
     }
 
     > *:not(.columns) {

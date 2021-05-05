@@ -35,8 +35,11 @@
 <body Validator.InvalidCssClass="has-error">
     <cc:IconSet />
     <cc:Nav RenderSettings.Mode="Server" />
-    <header>
-        <menu>
+    <header class="header">
+        <div class="header__content">
+            <dot:ContentPlaceHolder ID="Header" />
+        </div>
+        <div class="header__buttons">
             <dot:RouteLink class="button"
                            Class-button--secondary="{resource: Context.Route.RouteName != "Default"}"
                            Class-button--primary="{resource: Context.Route.RouteName == "Default"}"
@@ -45,10 +48,6 @@
                            Class-button--secondary="{resource: Context.Route.RouteName != "Converter"}"
                            Class-button--primary="{resource: Context.Route.RouteName == "Converter"}"
                            RouteName="Converter">ASPX to DotVVM Converter</dot:RouteLink>
-        </menu>
-
-        <div class="header-wrapper">
-            <dot:ContentPlaceHolder ID="Header" />
         </div>
     </header>
     <main>

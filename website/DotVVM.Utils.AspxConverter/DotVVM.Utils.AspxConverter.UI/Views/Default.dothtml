@@ -4,18 +4,16 @@
 <dot:Content ContentPlaceHolderID="Header">
     <dot:RequiredResource Name="homepage-css" />
     <dot:RequiredResource Name="nav-and-footer-css" />
-    <div class="header-title">
-        <h1>Cheat Sheet for ASP.NET Developers</h1>
-    </div>
 
-    <section class="intro">
+    <h1 class="header__title" InnerText="Cheat Sheet for ASP.NET Developers" />
+
+    <div class="header__desc">
         <p class="intense">
             <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
         </p>
         <p>
             It is inspired by ASP.NET Web Forms, but addresses the most criticized pain-points of Web Forms: viewstate, ugly markup and bad testability.
         </p>
-
         <p>
             DotVVM can be used together with ASP.NET Web Forms in the same application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM
             without rewriting the rest.
@@ -23,8 +21,7 @@
         <p>
             <a href="https://academy.dotvvm.com" target="_blank">Learning DotVVM</a> is a matter of days.
         </p>
-    </section>
-
+    </div>
 </dot:Content>
 
 <dot:Content ContentPlaceHolderID="MainContent">
