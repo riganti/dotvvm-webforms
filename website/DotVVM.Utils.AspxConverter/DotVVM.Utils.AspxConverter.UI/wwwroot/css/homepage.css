@@ -50,6 +50,33 @@ html, body {
   margin: 0px;
   padding: 0px; }
 
+html {
+  width: 100%;
+  overflow: auto;
+  scroll-behavior: smooth; }
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
+  padding-top: var(--nav-height); }
+
+body nav {
+  flex: 0 0 auto;
+  width: 100%; }
+
+body header {
+  flex: 0 0 auto;
+  width: 100%; }
+
+body main {
+  flex: 1 1 auto;
+  width: 100%; }
+
+body footer {
+  flex: 0 0 auto;
+  width: 100%; }
+
 header {
   padding: 3rem 3.6rem 3.6rem 3.6rem;
   background: url("../img/pattern.png");

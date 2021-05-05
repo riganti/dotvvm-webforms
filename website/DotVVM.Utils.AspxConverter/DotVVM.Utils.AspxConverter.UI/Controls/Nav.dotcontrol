@@ -1,0 +1,158 @@
+﻿@viewModel System.Object, mscorlib
+@noWrapperTag
+
+<nav class="nav">
+    <a href="https://www.dotvvm.com/"
+       class="nav__logo"
+       rel="noopener"
+       aria-label="Homepage">
+        <cc:DotvvmSticker />
+    </a>
+
+    <div class="nav__menu" html:id="navMenu">
+        <ul class="nav__left" itemscope="true" itemtype="http://www.schema.org/SiteNavigationElement">
+            <li class="nav__item nav__item--row-1">
+                <a href="https://www.dotvvm.com/products"
+                   rel="noopener"
+                   aria-label="products">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="products" />
+                    </div>
+                    Products
+                </a>
+            </li>
+            <li class="nav__item nav__item--row-3">
+                <a href="https://www.dotvvm.com/build"
+                   rel="noopener"
+                   aria-label="Build">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="products" />
+                    </div>
+                    Build
+                </a>
+            </li>
+            <li class="nav__item nav__item--row-3">
+                <a href="https://www.dotvvm.com/modernize"
+                   rel="noopener"
+                   aria-label="Modernize">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="products" />
+                    </div>
+                    Modernize
+                </a>
+            </li>
+            <h4>Use Cases</h4>
+            <li class="nav__item nav__item--row-5" itemprop="name">
+                <a href="https://www.dotvvm.com/docs/latest" rel="noopener" itemprop="url">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="docs" />
+                    </div>
+                    Docs
+                </a>
+            </li>
+            <li class="nav__item nav__item--row-5" itemprop="name">
+                <a href="https://www.dotvvm.com/samples"
+                   rel="noopener"
+                   aria-label="Samples">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="products" />
+                    </div>
+                    Samples
+                </a>
+            </li>
+            <li class="nav__item nav__item--row-5" itemprop="name">
+                <a href="https://academy.dotvvm.com/" rel="noopener" target="_blank" itemprop="url">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="academy" />
+                    </div>
+                    Academy
+                </a>
+            </li>
+            <h4>Learn</h4>
+            <li class="nav__item nav__item--row-3" itemprop="name">
+                <a href="https://www.dotvvm.com/blog"
+                   rel="noopener"
+                   aria-label="Blog"
+                   itemprop="url">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="academy" />
+                    </div>
+                    Blog
+                </a>
+            </li>
+            <li class="nav__item nav__item--row-1 nav__item--mobile">
+                <a href="https://www.dotvvm.com/order/cart"
+                   rel="noopener"
+                   aria-label="Cart"
+                   itemprop="url">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="cart" />
+                    </div>
+                    Cart
+                </a>
+            </li>
+            <li class="nav__mobile-buttons">
+                <a href="https://www.dotvvm.com/login"
+                   aria-label="Sign In"
+                   rel="noopener"
+                   class="button button--primary">
+                    Sign In
+                </a>
+            </li>
+        </ul>
+        <ul class="nav__right">
+            <li class="nav__item">
+                <a href="https://www.dotvvm.com/order/cart"
+                   rel="noopener"
+                   aria-label="Cart"
+                   itemprop="url">
+                    <div class="nav__item-icon">
+                        <cc:Icon Name="cart" />
+                    </div>
+                    Cart
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="https://www.dotvvm.com/login"
+                   aria-label="Sign In"
+                   rel="noopener"
+                   itemprop="url">
+                    Sign In
+                </a>
+            </li>
+
+            <li class="nav__item nav__item--with-button">
+                <a href="https://www.dotvvm.com/get-dotvvm"
+                   rel="noopener"
+                   aria-label="Get DotVVM"
+                   class="button button--primary button--small">
+                    Get DotVVM
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="nav__burger"
+            aria-label="Open menu button"
+            title="Open menu button"
+            html:id="showNav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<dot:InlineScript>
+    dotvvm.events.init.subscribe(function () {
+        let navBurger = document.getElementById('showNav');
+        let navMenu = document.getElementById('navMenu');
+        let body = document.querySelector('body');
+
+        navBurger.addEventListener('click', function () {
+            navBurger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+            body.classList.toggle('scroll-disabled');
+        });
+    });
+</dot:InlineScript>

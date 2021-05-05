@@ -9,6 +9,40 @@ html, body {
     padding: 0px;
 }
 
+html {
+    width: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+}
+
+body {
+    nav {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    header {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    main {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    footer {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
 
 header {
     padding: 5*$padding 6*$padding 6*$padding 6*$padding;
@@ -82,6 +116,3 @@ footer {
         width: 100px;
     }
 }
-
-
-

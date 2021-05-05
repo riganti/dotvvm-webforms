@@ -23,23 +23,24 @@ namespace DotVVM.Utils.AspxConverter.UI
 
         private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
         {
-            config.Markup.AddMarkupControl("cc", "Sample", "Controls/Sample.dotcontrol");
+            config.Markup.AutoDiscoverControls(new DefaultControlRegistrationStrategy(config, "cc", "Controls"));
         }
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
             config.Resources.Register("converter", new ScriptResource(new UrlResourceLocation("~/js/converter.js"))
             {
-                Dependencies = new [] { "converter-css"}
+                Dependencies = new[] { "converter-css" }
             });
             config.Resources.Register("converter-css", new StylesheetResource(new UrlResourceLocation("~/css/converter.min.css")));
 
             config.Resources.Register("homepage-css", new StylesheetResource(new UrlResourceLocation("~/css/homepage.min.css")));
+            config.Resources.Register("nav-and-footer-css", new StylesheetResource(new UrlResourceLocation("~/css/nav-and-footer.min.css")));
 
             config.Resources.Register("syntax", new ScriptResource(new UrlResourceLocation("~/js/syntax/syntax.js")));
             config.Resources.Register("syntax-csharp", new ScriptResource(new UrlResourceLocation("~/js/syntax/syntax_csharp.js"))
             {
-                Dependencies = new [] { "syntax" }
+                Dependencies = new[] { "syntax" }
             });
             config.Resources.Register("syntax-dothtml", new ScriptResource(new UrlResourceLocation("~/js/syntax/syntax_dothtml.js"))
             {
@@ -47,9 +48,9 @@ namespace DotVVM.Utils.AspxConverter.UI
             });
         }
 
-		public void ConfigureServices(IDotvvmServiceCollection options)
+        public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddDefaultTempStorages("temp");
-		}
+        }
     }
 }

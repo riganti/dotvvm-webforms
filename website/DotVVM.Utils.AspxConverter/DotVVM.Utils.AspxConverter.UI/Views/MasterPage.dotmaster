@@ -31,18 +31,21 @@
     <meta name="twitter:image" content="~/img/logo-dotvvm.png" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+    <dot:RequiredResource Name="nav-and-footer-css" />
 </head>
 <body Validator.InvalidCssClass="has-error">
-
+    <cc:IconSet />
+    <cc:Nav RenderSettings.Mode="Server" />
     <header>
-        <menu>
-            <li class-active="{resource: Context.Route.RouteName == "Default"}">
+        <%--<menu>
+            <li Class-active="{resource: Context.Route.RouteName == "Default"}">
                 <dot:RouteLink RouteName="Default">DotVVM Cheat Sheet</dot:RouteLink>
             </li>
-            <li class-active="{resource: Context.Route.RouteName == "Converter"}">
+            <li Class-active="{resource: Context.Route.RouteName == "Converter"}">
                 <dot:RouteLink RouteName="Converter">ASPX to DotVVM Converter</dot:RouteLink>
             </li>
-        </menu>
+        </menu>--%>
 
         <div class="header-wrapper">
             <dot:ContentPlaceHolder ID="Header" />

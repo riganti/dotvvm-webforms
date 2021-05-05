@@ -7,7 +7,9 @@
     <None Remove="**/*.dothtml;**/*.dotmaster;**/*.dotcontrol" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="bundleconfig.json" />
     <Content Remove="compilerconfig.json" />
+    <Content Remove="Controls\DotvvmSticker.dotcontrol" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="dotvvm_serialized_config.json.tmp" />
@@ -15,13 +17,16 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\app.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\nav-and-footer.min.css" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\*.md" />
     <Content Include="Data\*.md" CopyToPublishDirectory="Always" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
+    <None Include="Controls\DotvvmSticker.dotcontrol" />
     <None Include="wwwroot\js\syntax\syntax.es5.js" />
     <None Include="wwwroot\js\syntax\syntax.es5.min.js" />
     <None Include="wwwroot\js\syntax\syntax.js" />
@@ -52,8 +57,5 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

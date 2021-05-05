@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "wwwroot/css/nav-and-footer.min.css",
+    "inputFiles": [
+      "wwwroot/css/nav-and-footer.css"
+    ]
+  }
+]
