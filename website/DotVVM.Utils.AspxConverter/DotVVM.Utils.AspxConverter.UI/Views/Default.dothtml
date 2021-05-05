@@ -2,11 +2,9 @@
 @masterPage Views/MasterPage.dotmaster
 
 <dot:Content ContentPlaceHolderID="Header">
-
+    <dot:RequiredResource Name="homepage-css" />
+    <dot:RequiredResource Name="nav-and-footer-css" />
     <div class="header-title">
-        <a href="https://www.dotvvm.com/" target="_blank">
-            <img src="~/img/logo-dotvvm.svg" alt="DotVVM.com" />
-        </a>
         <h1>Cheat Sheet for ASP.NET Developers</h1>
     </div>
 
@@ -51,7 +49,7 @@
 
         <div>
             <p class="intense">
-                Try our <dot:RouteLink RouteName="Converter">online converter</dot:RouteLink> that can help with 
+                Try our <dot:RouteLink RouteName="Converter">online converter</dot:RouteLink> that can help with
                 some transforms of ASP.NET Web Forms controls to their DotVVM equivalents.
             </p>
         </div>
@@ -91,7 +89,6 @@
 
     <dot:RequiredResource Name="syntax-csharp" />
     <dot:RequiredResource Name="syntax-dothtml" />
-    <dot:RequiredResource Name="homepage-css" />
 
     <dot:InlineScript Dependencies="syntax-dothtml,syntax-csharp">
         TinySyntaxHighlighter.initialize();

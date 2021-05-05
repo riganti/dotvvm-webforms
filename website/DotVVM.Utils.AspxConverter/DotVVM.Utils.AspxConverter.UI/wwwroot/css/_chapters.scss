@@ -15,8 +15,9 @@
 
 .chapter {
     padding: 4*$padding 3*$padding;
+    background-color: white;
 
-    &:nth-child(2n+1) {
+    &:nth-child(even) {
         background-color: $color-section;
     }
 
@@ -35,7 +36,7 @@
         padding: 0 3*$padding;
 
         pre {
-            max-width: 100%; 
+            max-width: 100%;
             overflow-x: auto;
             background-color: $color-code-background-secondary;
             border: 1px solid $color-border;

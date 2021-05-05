@@ -48,7 +48,7 @@ a {
     text-decoration: none;
     font-weight: 500;
 
-    &:active:not(.button), &:hover:not(.button) {
+    &:active:not([class]), &:hover:not([class]) {
         color: $color-secondary;
     }
 }

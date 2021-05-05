@@ -28,10 +28,7 @@ namespace DotVVM.Utils.AspxConverter.UI
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
-            config.Resources.Register("converter", new ScriptResource(new UrlResourceLocation("~/js/converter.js"))
-            {
-                Dependencies = new[] { "converter-css" }
-            });
+            config.Resources.Register("converter", new ScriptResource(new UrlResourceLocation("~/js/converter.js")));
             config.Resources.Register("converter-css", new StylesheetResource(new UrlResourceLocation("~/css/converter.min.css")));
 
             config.Resources.Register("homepage-css", new StylesheetResource(new UrlResourceLocation("~/css/homepage.min.css")));

@@ -2,11 +2,10 @@
 @masterPage Views/MasterPage.dotmaster
 
 <dot:Content ContentPlaceHolderID="Header">
+    <dot:RequiredResource Name="converter-css" />
+    <dot:RequiredResource Name="nav-and-footer-css" />
 
     <div class="header-title">
-        <a href="https://www.dotvvm.com/" target="_blank">
-            <img src="~/img/logo-dotvvm.svg" alt="DotVVM.com" />
-        </a>
         <h1>ASPX to DotVVM Converter</h1>
     </div>
 
@@ -22,7 +21,7 @@
 
 <dot:Content ContentPlaceHolderID="MainContent">
 
-    <ul class="nav">
+    <ul class="page-nav">
         <li Class-active="{value: TabIndex == 0}">
             <dot:LinkButton Click="{staticCommand: TabIndex = 0}">Step 1: Paste your ASPX</dot:LinkButton>
         </li>
