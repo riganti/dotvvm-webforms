@@ -116,6 +116,12 @@ header {
     background-color: #f1f6fe; }
   .chapter > *:not(.columns) {
     padding: 0 1.8rem; }
+    @media screen and (max-width: 425px) {
+      .chapter > *:not(.columns) {
+        padding: 0; } }
+  @media screen and (max-width: 425px) {
+    .chapter {
+      padding: 1.2rem 16px; } }
 
 .columns {
   display: flex;
@@ -124,6 +130,9 @@ header {
     flex: 1 1 50%;
     overflow-x: hidden;
     padding: 0 1.8rem; }
+    @media screen and (max-width: 425px) {
+      .columns > div {
+        padding: 0; } }
     .columns > div pre {
       max-width: 100%;
       overflow-x: auto;
