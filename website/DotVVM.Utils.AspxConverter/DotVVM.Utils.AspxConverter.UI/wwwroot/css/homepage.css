@@ -37,7 +37,7 @@ a {
   transition: all ease-in .1s;
   text-decoration: none;
   font-weight: 500; }
-  a:active, a:hover {
+  a:active:not(.button), a:hover:not(.button) {
     color: #27bf89; }
 
 code {

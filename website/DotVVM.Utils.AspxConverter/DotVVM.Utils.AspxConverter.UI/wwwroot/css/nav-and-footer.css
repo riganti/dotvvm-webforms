@@ -502,3 +502,90 @@
     .dotvvm-sticker > * {
         font-size: 1em;
     }
+
+
+.button {
+    --btn-background: #3175b9;
+    --btn-border-color: var(--btn-background);
+    --btn-color: #ffffff;
+    --btn-badding: 8px 16px;
+    --btn-min-width: 160px;
+    --btn-max-width: 240px;
+    --btn-font-size: large;
+    --box-shadow-alpha: .15;
+    --icon-size: 16px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--btn-min-width);
+    max-width: var(--btn-max-width);
+    padding: var(--btn-badding);
+    background-color: var(--btn-background);
+    border-radius: 5px;
+    font-size: var(--btn-font-size);
+    font-weight: 500;
+    color: var(--btn-color);
+    text-decoration: none;
+    transition: box-shadow 0.25s, background-color 0.25s, border-color 0.25s;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, var(--box-shadow-alpha));
+    border: 2px solid var(--btn-border-color);
+}
+
+@media only screen and (max-width: 1024px) {
+    .button {
+        --btn-min-width: 120px;
+        --btn-badding: 4px 8px;
+        --btn-font-size: medium;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .button {
+        --box-shadow-alpha: 0;
+    }
+}
+
+.button:hover {
+    --box-shadow-alpha: .3;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .button:hover {
+        --box-shadow-alpha: 0;
+    }
+}
+
+.button > span {
+    font-size: 1em;
+    color: var(--btn-color);
+}
+
+.button > .icon, .button > svg {
+    display: block;
+    width: var(--icon-size);
+    min-width: var(--icon-size);
+    height: var(--icon-size);
+    margin-left: 4px;
+    fill: var(--btn-color);
+}
+
+.button--primary {
+    --btn-background: #27be89;
+}
+
+    .button--primary:hover {
+        --btn-background: #24b280;
+    }
+
+.button--secondary {
+    --btn-background: rgba(255, 255, 255, 0.5);
+    --btn-border-color: #434343;
+    --btn-color: #434343;
+}
+
+    .button--secondary:hover {
+        --btn-background: #ffffff;
+    }

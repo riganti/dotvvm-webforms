@@ -37,7 +37,7 @@ a {
   transition: all ease-in .1s;
   text-decoration: none;
   font-weight: 500; }
-  a:active, a:hover {
+  a:active:not(.button), a:hover:not(.button) {
     color: #27bf89; }
 
 code {
@@ -159,16 +159,6 @@ footer {
   @media only screen and (max-width: 1024px) {
     .columns {
       display: block; } }
-
-.button {
-  padding: 1em 3em;
-  background-color: #337ab7;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "Segoe UI", SegoeUI, "Segoe WP", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
-  cursor: pointer; }
 
 header {
   padding-bottom: 0.6rem; }
