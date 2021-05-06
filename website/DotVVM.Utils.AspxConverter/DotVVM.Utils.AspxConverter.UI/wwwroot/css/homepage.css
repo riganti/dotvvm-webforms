@@ -125,37 +125,34 @@ body {
     .chapter {
       --padding-x: 16px;
       --padding-y: 32px; } }
-  .chapter > *:not(.columns) {
-    padding: 0 1.8rem; }
-    @media screen and (max-width: 425px) {
-      .chapter > *:not(.columns) {
-        padding: 0; } }
   @media screen and (max-width: 425px) {
     .chapter {
       padding: 1.2rem 16px; } }
 
 .columns {
-  display: flex;
-  flex-direction: row; }
-  .columns > div {
-    flex: 1 1 50%;
-    overflow-x: hidden;
-    padding: 0 1.8rem; }
-    @media screen and (max-width: 425px) {
-      .columns > div {
-        padding: 0; } }
-    .columns > div pre {
-      max-width: 100%;
-      overflow-x: auto;
-      background-color: #fafafa;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.6rem; }
-      .columns > div pre code {
-        font-size: 0.875rem; }
-    .columns > div:nth-child(2n) pre {
-      background-color: #EBF0F4;
-      border-color: #337ab7; }
+  --col-count: 2;
+  --gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--col-count), minmax(16px, 1fr));
+  align-items: stretch;
+  justify-content: space-between;
+  grid-gap: var(--gap); }
+  @media screen and (max-width: 1024) {
+    .columns {
+      --col-count: 1;
+      --gap: 32px; } }
+  .columns > div pre {
+    max-width: 100%;
+    overflow-x: auto;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.6rem; }
+    .columns > div pre code {
+      font-size: 0.875rem; }
+  .columns > div:nth-child(2n) pre {
+    background-color: #EBF0F4;
+    border-color: #337ab7; }
   @media only screen and (max-width: 1024px) {
     .columns {
       display: block; } }

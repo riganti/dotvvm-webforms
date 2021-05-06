@@ -37,31 +37,27 @@
         --padding-y: 32px;
     }
 
-    > *:not(.columns) {
-        padding: 0 3*$padding;
-
-        @media screen and (max-width: 425px) {
-            padding: 0;
-        }
-    }
-
     @media screen and (max-width: 425px) {
         padding: 2*$padding 16px;
     }
 }
 
 .columns {
-    display: flex;
-    flex-direction: row;
+    --col-count: 2;
+    --gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(var(--col-count), minmax(16px, 1fr));
+    align-items: stretch;
+    justify-content: space-between;
+    grid-gap: var(--gap);
+
+    @media screen and (max-width: 1024) {
+        --col-count: 1;
+        --gap: 32px;
+    }
 
     > div {
-        flex: 1 1 50%;
-        overflow-x: hidden;
-        padding: 0 3*$padding;
 
-        @media screen and (max-width: 425px) {
-            padding: 0;
-        }
 
         pre {
             max-width: 100%;

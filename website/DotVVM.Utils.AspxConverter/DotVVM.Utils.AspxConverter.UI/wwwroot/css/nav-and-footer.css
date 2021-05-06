@@ -689,7 +689,7 @@
     }
 }
 
-.footer__left svg {
+.footer__left img {
     display: block;
     width: 100%;
     max-width: 240px;
@@ -697,8 +697,9 @@
 }
 
 @media only screen and (max-width: 425px) {
-    .footer__left svg {
+    .footer__left img {
         max-width: 200px;
+        margin-bottom: 16px;
     }
 }
 
