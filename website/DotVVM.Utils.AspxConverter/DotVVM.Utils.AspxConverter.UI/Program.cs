@@ -18,6 +18,7 @@ namespace DotVVM.Utils.AspxConverter.UI
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .ConfigureLogging((context, builder) =>
                 {
