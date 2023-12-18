@@ -27,6 +27,11 @@ namespace DotVVM.Utils.AspxConverter.Parser
             Elements = ReadElements();
         }
 
+        public ControlInnerElementsReader CreateChildReader(BeginTagToken childTag)
+        {
+            return new ControlInnerElementsReader(tokens, tokens.IndexOf(childTag));
+        }
+
         private Dictionary<string, IList<AspxToken>> ReadElements()
         {
             var elements = new Dictionary<string, IList<AspxToken>>(StringComparer.CurrentCultureIgnoreCase);

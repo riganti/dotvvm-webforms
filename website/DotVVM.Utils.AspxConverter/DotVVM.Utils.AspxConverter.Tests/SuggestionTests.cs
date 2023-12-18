@@ -137,6 +137,47 @@ namespace DotVVM.Utils.AspxConverter.Tests
 </dot:UpdateProgress>", markup);
         }
 
+        [Fact]
+        public void ListViewSuggestionsTest()
+        {
+            var input = @"<asp:ListView runat=""server"" ItemType=""test"" SelectMethod=""SelectTags"">
+        <LayoutTemplate>
+            <article>
+                <header>
+                    List of categories
+                </header>
+                <ul class=""taglist"">
+                    <asp:PlaceHolder ID=""ItemPlaceHolder"" runat=""server"" />
+                </ul>
+            </article>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <li><span class=""ui-icon ui-icon-tag""></span> <%# Item.TagName %></li>
+        </ItemTemplate>
+    </asp:ListView>";
+
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"
+            <article>
+                <header>
+                    List of categories
+                </header>
+                <ul class=""taglist"">
+                    <dot:Repeater ItemType=""test"" SelectMethod=""SelectTags"">
+        
+        <ItemTemplate>
+            <li><span class=""ui-icon ui-icon-tag""></span> <%# Item.TagName %></li>
+        </ItemTemplate>
+    </dot:Repeater>
+                </ul>
+            </article>
+        ", markup);
+        }
+
         private void InitWorkspace(string input)
         {
             workspace = new ConverterWorkspace();

@@ -8,7 +8,9 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
     {
         public AspxToken FirstToken { get; }
 
-        public int TokenCount { get; }
+        public AspxToken LastToken { get; }
+
+        public int? TokenCount { get; }
 
         public AspxToken TargetPosition { get; }
 
@@ -22,6 +24,14 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
             Placement = placement;
         }
 
+        public MoveTokenRangeFix(AspxToken firstToken, AspxToken lastToken, AspxToken targetPosition, Placement placement)
+        {
+            FirstToken = firstToken;
+            LastToken = lastToken;
+            TargetPosition = targetPosition;
+            Placement = placement;
+        }
+
         public override void Apply(WorkspaceFixContext context)
         {
             var firstTokenIndex = context.Tokens.IndexOf(FirstToken);
@@ -30,8 +40,9 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
                 throw new InvalidOperationException("Token to move not found!");
             }
 
-            var range = context.Tokens.GetRange(firstTokenIndex, TokenCount);
-            context.Tokens.RemoveRange(firstTokenIndex, TokenCount);
+            var tokenCount = TokenCount ?? context.Tokens.IndexOf(LastToken) - firstTokenIndex + 1;
+            var range = context.Tokens.GetRange(firstTokenIndex, tokenCount);
+            context.Tokens.RemoveRange(firstTokenIndex, tokenCount);
 
             var targetIndex = context.Tokens.IndexOf(TargetPosition);
             if (targetIndex < 0)
