@@ -9,7 +9,7 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 {
     public class TextBoxMatcher : ControlMatcher
     {
-        public override string[] MatchedTagNames => new[] { "asp:TextBox" }; 
+        public override string[] MatchedTagNames => new[] { "asp:TextBox", "dot:TextBox" }; 
 
         protected override IEnumerable<Suggestion> TryProvideSuggestions(BeginTagToken tagToken, Func<ControlInnerElementsReader> readerFactory)
         {
@@ -17,16 +17,19 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 
             var id = tagToken.FindOrGenerateId();
 
-            yield return new Suggestion()
+            if (tagToken.TagName.StartsWith("asp:"))
             {
-                Description = "Change to <code>&lt;dot:TextBox&gt;</code> and generate a viewmodel property",
-                Fixes = new FixAction[]
+                yield return new Suggestion()
                 {
-                    new RenameElementFix(tagToken, "dot:TextBox", reader.EndTag),
-                    new SetAttributeValueBindingFix(tagToken, "Text", id),
-                    new AddViewModelPropertyFix(id, "string")
-                }
-            };
+                    Description = "Change to <code>&lt;dot:TextBox&gt;</code> and generate a viewmodel property",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "dot:TextBox", reader.EndTag),
+                        new SetAttributeValueBindingFix(tagToken, "Text", id),
+                        new AddViewModelPropertyFix(id, "string")
+                    }
+                };
+            }
 
             var autoPostBack = tagToken.FindAttribute("AutoPostBack");
             if (autoPostBack != null)

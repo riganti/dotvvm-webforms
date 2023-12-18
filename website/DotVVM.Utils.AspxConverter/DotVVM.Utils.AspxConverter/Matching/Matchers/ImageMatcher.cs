@@ -9,20 +9,23 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 {
     public class ImageMatcher : ControlMatcher
     {
-        public override string[] MatchedTagNames => new[] { "asp:Image" };
+        public override string[] MatchedTagNames => new[] { "asp:Image", "img" };
 
         protected override IEnumerable<Suggestion> TryProvideSuggestions(BeginTagToken tagToken, Func<ControlInnerElementsReader> readerFactory)
         {
             var reader = readerFactory();
 
-            yield return new Suggestion()
+            if (tagToken.TagName.StartsWith("asp:"))
             {
-                Description = "Change to <code>&lt;img&gt;</code>",
-                Fixes = new FixAction[]
+                yield return new Suggestion()
                 {
-                    new RenameElementFix(tagToken, "img", reader.EndTag)
-                }
-            };
+                    Description = "Change to <code>&lt;img&gt;</code>",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "img", reader.EndTag)
+                    }
+                };
+            }
 
             if (tagToken.FindAttribute("ImageUrl") is { } imageUrl)
             {

@@ -21,10 +21,10 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
 
         public override void Apply(WorkspaceFixContext context)
         {
-            var commandBinding = "{value: " + ViewModelProperty + "}";
-            var value = new AttributeQuotedValueToken(0, "\"", commandBinding);
+            var valueBinding = "{value: " + ViewModelProperty + "}";
+            var attributeValue = new AttributeQuotedValueToken(0, "\"", valueBinding);
 
-            Tag.AddOrUpdateAttribute(Name, value);
+            Tag.AddOrUpdateAttribute(Name, attributeValue);
         }
     }
 }

@@ -22,9 +22,9 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
         public override void Apply(WorkspaceFixContext context)
         {
             var commandBinding = "{command: " + CommandName + "()}";
-            var value = new AttributeQuotedValueToken(0, "\"", commandBinding);
+            var attributeValue = new AttributeQuotedValueToken(0, "\"", commandBinding);
 
-            Tag.AddOrUpdateAttribute(Name, value);
+            Tag.AddOrUpdateAttribute(Name, attributeValue);
         }
     }
 }

@@ -9,20 +9,23 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 {
     public class GridViewTemplateFieldMatcher : ControlMatcher
     {
-        public override string[] MatchedTagNames => new[] { "asp:TemplateField" };
+        public override string[] MatchedTagNames => new[] { "asp:TemplateField", "dot:GridViewTemplateColumn" };
 
         protected override IEnumerable<Suggestion> TryProvideSuggestions(BeginTagToken tagToken, Func<ControlInnerElementsReader> readerFactory)
         {
             var reader = readerFactory();
 
-            yield return new Suggestion()
+            if (tagToken.TagName.StartsWith("asp:"))
             {
-                Description = "Change to <code>&lt;dot:GridViewTemplateColumn&gt;</code>",
-                Fixes = new FixAction[]
+                yield return new Suggestion()
                 {
-                    new RenameElementFix(tagToken, "dot:GridViewTemplateColumn", reader.EndTag)
-                }
-            };
+                    Description = "Change to <code>&lt;dot:GridViewTemplateColumn&gt;</code>",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "dot:GridViewTemplateColumn", reader.EndTag)
+                    }
+                };
+            }
 
             if (tagToken.FindAttribute("DataField") is { } dataField)
             {

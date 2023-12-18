@@ -9,20 +9,23 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 {
     public class UpdateProgressMatcher : ControlMatcher
     {
-        public override string[] MatchedTagNames => new[] { "asp:UpdateProgress" };
+        public override string[] MatchedTagNames => new[] { "asp:UpdateProgress", "dot:UpdateProgress" };
 
         protected override IEnumerable<Suggestion> TryProvideSuggestions(BeginTagToken tagToken, Func<ControlInnerElementsReader> readerFactory)
         {
             var reader = readerFactory();
 
-            yield return new Suggestion()
+            if (tagToken.TagName.StartsWith("asp:"))
             {
-                Description = "Change to <code>&lt;dot:UpdateProgress&gt;</code>",
-                Fixes = new FixAction[]
+                yield return new Suggestion()
                 {
-                    new RenameElementFix(tagToken, "dot:UpdateProgress", reader.EndTag)
-                }
-            };
+                    Description = "Change to <code>&lt;dot:UpdateProgress&gt;</code>",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "dot:UpdateProgress", reader.EndTag)
+                    }
+                };
+            }
 
             if (reader.Elements.TryGetValue("ContentTemplate", out var contentTemplate))
             {

@@ -9,20 +9,23 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
 {
     public class GridViewBoundFieldMatcher : ControlMatcher
     {
-        public override string[] MatchedTagNames => new[] { "asp:BoundField" };
+        public override string[] MatchedTagNames => new[] { "asp:BoundField", "dot:GridViewTextColumn" };
 
         protected override IEnumerable<Suggestion> TryProvideSuggestions(BeginTagToken tagToken, Func<ControlInnerElementsReader> readerFactory)
         {
             var reader = readerFactory();
 
-            yield return new Suggestion()
+            if (tagToken.TagName.StartsWith("asp:"))
             {
-                Description = "Change to <code>&lt;dot:GridViewTextColumn&gt;</code>",
-                Fixes = new FixAction[]
+                yield return new Suggestion()
                 {
-                    new RenameElementFix(tagToken, "dot:GridViewTextColumn", reader.EndTag)
-                }
-            };
+                    Description = "Change to <code>&lt;dot:GridViewTextColumn&gt;</code>",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "dot:GridViewTextColumn", reader.EndTag)
+                    }
+                };
+            }
 
             if (tagToken.FindAttribute("DataField") is { } dataField)
             {
