@@ -178,6 +178,18 @@ namespace DotVVM.Utils.AspxConverter.Tests
         ", markup);
         }
 
+        [Fact]
+        public void AttributeBindingSuggestionsTest()
+        {
+            var input = @"<h1 class='<%# Item.Title %>'>test</h1>";
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"<h1 class=""{value: Item.Title}"">test</h1>", markup);
+        }
+
         private void InitWorkspace(string input)
         {
             workspace = new ConverterWorkspace();
