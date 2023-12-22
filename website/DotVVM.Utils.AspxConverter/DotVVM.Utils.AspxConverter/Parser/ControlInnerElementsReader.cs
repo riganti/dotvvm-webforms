@@ -17,6 +17,8 @@ namespace DotVVM.Utils.AspxConverter.Parser
 
         public IReadOnlyDictionary<string, IList<AspxToken>> Elements { get; }
 
+        public bool HasEmptyContent => Elements.Count == 0;
+
 
         public ControlInnerElementsReader(List<AspxToken> tokens, int index)
         {

@@ -190,6 +190,42 @@ namespace DotVVM.Utils.AspxConverter.Tests
             Assert.Equal(@"<h1 class=""{value: Item.Title}"">test</h1>", markup);
         }
 
+        [Fact]
+        public void HyperLinkSuggestionsTest()
+        {
+            var input = @"<asp:HyperLink NavigateUrl=""https://www.google.com"">Google</asp:HyperLink>";
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"<a href=""https://www.google.com"">Google</a>", markup);
+        }
+
+        [Fact]
+        public void HyperLinkWithTextSuggestionsTest()
+        {
+            var input = @"<asp:HyperLink NavigateUrl=""https://www.google.com"" Text=""My text"" />";
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"<a href=""https://www.google.com"">My text</a>", markup);
+        }
+
+        [Fact]
+        public void HyperLinkRouteSuggestionsTest()
+        {
+            var input = @"<asp:HyperLink NavigateUrl=""<%$ RouteUrl: RouteName=HomePage, PageIndex=1 %>"" Text=""My text"" />";
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"<webforms:HybridRouteLink Text=""My text"" RouteName=""HomePage"" Param-PageIndex=""1"" />", markup);
+        }
+
         private void InitWorkspace(string input)
         {
             workspace = new ConverterWorkspace();

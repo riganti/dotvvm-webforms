@@ -21,7 +21,7 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                 // convert to <webforms:HybridRouteLink>
                 if (RouteUrlExpressionParser.TryParse(navigateUrl.GetValue(), out var routeName, out var routeValues))
                 {
-                    if (tagToken.TagName.StartsWith("asp:"))
+                    if (!tagToken.TagName.StartsWith("webforms:"))
                     {
                         yield return new Suggestion()
                         {
@@ -62,6 +62,20 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                         };
                     }
 
+                    if (tagToken.FindAttribute("Text") is { } textAttribute
+                        && reader.HasEmptyContent)
+                    {
+                        yield return new Suggestion()
+                        {
+                            Description = "Move <code>Text</code> attribute inside",
+                            Fixes = new FixAction[]
+                            {
+                                new RemoveAttributeFix(tagToken, textAttribute),
+                                new AddInnerContentFix(tagToken, reader.EndTag, textAttribute.GetValue())
+                            }
+                        };
+                    }
+                    
                     yield return new Suggestion()
                     {
                         Description = "Change <code>NavigateUrl</code> to <code>href</code>",
@@ -71,6 +85,18 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                         }
                     };
                 }
+            }
+            else if (tagToken.FindAttribute("RouteName") is { } routeNameAttribute
+                     && !tagToken.TagName.StartsWith("webforms:"))
+            {
+                yield return new Suggestion()
+                {
+                    Description = "Change to <code>&lt;webforms:HybridRouteLink&gt;</code>",
+                    Fixes = new FixAction[]
+                    {
+                        new RenameElementFix(tagToken, "webforms:HybridRouteLink", reader.EndTag)
+                    }
+                };
             }
         }
     }
