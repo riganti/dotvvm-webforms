@@ -23,7 +23,7 @@
 
         <dot:LinkButton Click="{staticCommand: TabIndex = 2}"
                         class="button button--long"
-                        Class-button--secondary="{value: TabIndex != 3}"
+                        Class-button--secondary="{value: TabIndex != 2}"
                         Text="Step 3: See generated C# declarations" />
     </div>
 

@@ -9,7 +9,7 @@ ASP.NET pages fire various events before the HTML output is rendered - `Init`, `
 ```CSHARP
 protected void Page_Init(object sender, EventArgs e)
 {
-    // init default values for the viewstate
+    // ...
 }
 
 protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +26,6 @@ protected void Page_PreRender(object sender, EventArgs e)
 -------------------------------------
 
 DotVVM has a [similar ](https://www.dotvvm.com/docs/latest/pages/concepts/viewmodels/overview#viewmodel-lifecycle) lifecycle. 
-
 The semantics of the methods is the same, and they are async.
 
 ### DefaultViewModel.cs

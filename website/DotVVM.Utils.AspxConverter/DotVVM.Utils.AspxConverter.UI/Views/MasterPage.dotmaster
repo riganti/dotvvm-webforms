@@ -118,11 +118,11 @@
                                InnerText="StackOverflow" />
                         </li>
                         <li>
-                            <a href="https://gitter.im/riganti/dotvvm"
+                            <a href="https://forum.dotvvm.com"
                                class="link link--white"
                                rel="noopener"
                                target="_blank"
-                               aria-label="Gitter link" InnerText="Gitter" />
+                               aria-label="DotVVM Forum Link" InnerText="DotVVM Forum" />
                         </li>
                     </ul>
                 </div>
