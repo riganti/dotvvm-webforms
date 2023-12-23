@@ -259,6 +259,32 @@ text");
             CheckEnd();
         }
 
+        [Fact]
+        public void BindingInsideText()
+        {
+            var input = @"<p>some text <%# Eval(""Title"") %></p>";
+            Tokenize(input);
+
+            CheckToken<BeginTagToken>(@"<p>", t =>
+            {
+                Assert.False(t.IsSelfClosing);
+                Assert.Equal("p", t.TagName);
+            });
+            CheckToken<LiteralToken>(@"some text ", t =>
+            {
+                Assert.Equal("some text ", t.Text);
+            });
+            CheckToken<BindingBlockToken>(@"<%# Eval(""Title"") %>", t =>
+            {
+                Assert.Equal(@" Eval(""Title"") ", t.Content);
+            });
+            CheckToken<EndTagToken>(@"</p>", t =>
+            {
+                Assert.Equal("p", t.TagName);
+            });
+            CheckEnd();
+        }
+
         private void CheckEnd()
         {
             Assert.Equal(checkedToken, tokens.Count);

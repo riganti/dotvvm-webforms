@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotVVM.Utils.AspxConverter.Parser.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +10,12 @@ namespace DotVVM.Utils.AspxConverter.Matching.Utils
 
         public static bool TryParseBinding(string bindingExpression, out string binding)
         {
-            if (bindingExpression.StartsWith("<%#") && bindingExpression.EndsWith("%>"))
+            if (bindingExpression.StartsWith("<%#:") && bindingExpression.EndsWith("%>"))
+            {
+                binding = bindingExpression[4..^2].Trim();
+                return true;
+            }
+            else if (bindingExpression.StartsWith("<%#") && bindingExpression.EndsWith("%>"))
             {
                 binding = bindingExpression[3..^2].Trim();
                 return true;
@@ -19,5 +25,9 @@ namespace DotVVM.Utils.AspxConverter.Matching.Utils
             return false;
         }
 
+        public static string TranslateBinding(string content)
+        {
+            return content.Trim();
+        }
     }
 }

@@ -60,6 +60,12 @@ namespace DotVVM.Utils.AspxConverter.Parser
                         var text = AcceptThrough("--%>");
                         yield return new CommentToken(current, text[..2], text[2..^2], text[^2..]);
                     }
+                    else if (ContinuesWith("<%#:"))
+                    {
+                        // binding
+                        var text = AcceptThrough("%>");
+                        yield return new BindingBlockToken(current, text[..2], text[2..4], text[4..^2], text[^2..]);
+                    }
                     else if (ContinuesWith("<%#"))
                     {
                         // binding

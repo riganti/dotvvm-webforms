@@ -52,7 +52,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
         <dot:GridViewTextColumn HeaderText=""Col1"" ValueBinding=""{value: Test}"" />
         <dot:GridViewTemplateColumn HeaderText=""Col2"">
             <ContentTemplate>
-                <%# Eval(""Amount"") %> pcs
+                {{value: Eval(""Amount"")}} pcs
             </ContentTemplate>
         </dot:GridViewTemplateColumn>
     </Columns>
@@ -107,8 +107,8 @@ namespace DotVVM.Utils.AspxConverter.Tests
     
     <ItemTemplate>
        <tr>
-          <td> <%# Eval(""Name"") %> </td>
-          <td> <%# Eval(""Ticker"") %> </td>
+          <td> {{value: Eval(""Name"")}} </td>
+          <td> {{value: Eval(""Ticker"")}} </td>
        </tr>
     </ItemTemplate>
     
@@ -170,7 +170,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
                     <dot:Repeater ItemType=""test"" SelectMethod=""SelectTags"">
         
         <ItemTemplate>
-            <li><span class=""ui-icon ui-icon-tag""></span> <%# Item.TagName %></li>
+            <li><span class=""ui-icon ui-icon-tag""></span> {{value: Item.TagName}}</li>
         </ItemTemplate>
     </dot:Repeater>
                 </ul>
@@ -188,6 +188,19 @@ namespace DotVVM.Utils.AspxConverter.Tests
 
             var markup = workspace.GetMarkup();
             Assert.Equal(@"<h1 class=""{value: Item.Title}"">test</h1>", markup);
+        }
+
+
+        [Fact]
+        public void TextBindingSuggestionsTest()
+        {
+            var input = @"some text <%# Item.Title %>";
+            InitWorkspace(input);
+
+            ApplySuggestions();
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"some text {{value: Item.Title}}", markup);
         }
 
         [Fact]
