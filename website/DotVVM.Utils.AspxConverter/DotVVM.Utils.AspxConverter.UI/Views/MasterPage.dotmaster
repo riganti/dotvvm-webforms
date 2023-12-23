@@ -1,5 +1,5 @@
 ﻿@viewModel DotVVM.Utils.AspxConverter.UI.ViewModels.MasterPageViewModel, DotVVM.Utils.AspxConverter.UI
-@import DotVVM.Utils.AspxConverter.UI.Resources
+@import DotVVM.Utils.AspxConverter.UI
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -16,29 +16,29 @@
         })(window, document, 'script', 'dataLayer', 'GTM-5S4ZFSM');</script>
     <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
-    <title>{{resource: Strings.ProjectTitle}}</title>
-    <meta name="description=" content="{{resource: Strings.ProjectDescription}}" />
+    <title>{{resource: Resources.Strings.ProjectTitle}}</title>
+    <meta name="description=" content="{{resource: Resources.Strings.ProjectDescription}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="RIGANTI">
     <meta name="keywords" content="Open source, ASP.NET, DotVVM, MVVM framework, Visual Studio Extension, HTML, C#, No JavaScript, Development, Frontend, ASP.NET Core Support, ASP.NET Support, Enterprise Web Apps, Line of business, Cheat Sheet, Web Forms, legacy app">
     <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
     <!-- Google+ -->
-    <meta itemprop="name" content="{{resource: Strings.ProjectTitle}}" />
-    <meta itemprop="description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta itemprop="name" content="{{resource: Resources.Strings.ProjectTitle}}" />
+    <meta itemprop="description" content="{{resource: Resources.Strings.ProjectDescription}}" />
     <meta itemprop="image" content="~/img/logo-dotvvm.png" />
     <!-- Facebook -->
-    <meta property="og:title" content="{{resource: Strings.ProjectTitle}}" />
-    <meta property="og:description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta property="og:title" content="{{resource: Resources.Strings.ProjectTitle}}" />
+    <meta property="og:description" content="{{resource: Resources.Strings.ProjectDescription}}" />
     <meta property="og:image" content="~/img/logo-dotvvm.png" />
-    <meta property="og:url" content="{{resource: Strings.ProjectUrl}}" />
-    <meta itemprop="url" content="{{resource: Strings.ProjectUrl}}" />
+    <meta property="og:url" content="{{resource: Resources.Strings.ProjectUrl}}" />
+    <meta itemprop="url" content="{{resource: Resources.Strings.ProjectUrl}}" />
     <!-- Google -->
-    <meta name="title" content="{{resource: Strings.ProjectTitle}}" />
-    <meta name="description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta name="title" content="{{resource: Resources.Strings.ProjectTitle}}" />
+    <meta name="description" content="{{resource: Resources.Strings.ProjectDescription}}" />
     <meta name="image" content="~/img/logo-dotvvm.png" />
     <!-- Twitter -->
-    <meta name="twitter:title" content="{{resource: Strings.ProjectTitle}}" />
-    <meta name="twitter:description" content="{{resource: Strings.ProjectDescription}}" />
+    <meta name="twitter:title" content="{{resource: Resources.Strings.ProjectTitle}}" />
+    <meta name="twitter:description" content="{{resource: Resources.Strings.ProjectDescription}}" />
     <meta name="twitter:image" content="~/img/logo-dotvvm.png" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
