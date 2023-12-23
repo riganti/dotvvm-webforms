@@ -36,7 +36,7 @@ namespace DotVVM.Utils.AspxConverter.Workspace
 
                 if (token is LiteralToken literal)
                 {
-                    sb.Append(WebUtility.HtmlEncode(literal.Fragment));
+                    AppendLiteral(literal.Fragment);
                 }
                 else if (token is DirectiveToken || token is BindingBlockToken || token is ExpressionBuilderToken)
                 {
@@ -59,7 +59,7 @@ namespace DotVVM.Utils.AspxConverter.Workspace
                 {
                     sb.Append($"<b class='b'>{WebUtility.HtmlEncode(beginTag.BeforeNameFragment)}</b>");
                     sb.Append($"<b class='m'>{WebUtility.HtmlEncode(beginTag.TagName)}</b>");
-                    
+
                     foreach (var attribute in beginTag.Attributes)
                     {
                         if (suggestionsMap.TryGetValue(attribute, out var attributeSuggestions))
@@ -81,7 +81,16 @@ namespace DotVVM.Utils.AspxConverter.Workspace
                         sb.Append($"<b class='r'>{WebUtility.HtmlEncode(attribute.BeforeNameFragment)}</b>");
                         sb.Append($"<b class='r'>{WebUtility.HtmlEncode(attribute.Name)}</b>");
                         sb.Append($"<b class='b'>{WebUtility.HtmlEncode(attribute.BeforeValueFragment)}</b>");
-                        sb.Append($"<b class='b'>{WebUtility.HtmlEncode(attribute.Value.Fragment)}</b>");
+                        if (attribute.Value is AttributeQuotedValueToken quotedAttribute)
+                        {
+                            sb.Append($"<b class='b'>{WebUtility.HtmlEncode(quotedAttribute.QuoteChar)}</b>");
+                            AppendAttributeValue(quotedAttribute.Value);
+                            sb.Append($"<b class='b'>{WebUtility.HtmlEncode(quotedAttribute.QuoteChar)}</b>");
+                        }
+                        else
+                        {
+                            AppendAttributeValue(attribute.Value.Fragment);
+                        }
 
                         if (attributeSuggestions != null)
                         {
@@ -110,6 +119,69 @@ namespace DotVVM.Utils.AspxConverter.Workspace
             }
 
             return (sb.ToString(), data);
+
+            void AppendAttributeValue(string value)
+            {
+                if ((value.StartsWith("<%$") || value.StartsWith("<%#")) && value.EndsWith("%>"))
+                {
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[..3])}</b>");
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[3..^2])}</b>");
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[^2..])}</b>");
+                }
+                else if ((value.StartsWith("<%$:") || value.StartsWith("<%#:")) && value.EndsWith("%>"))
+                {
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[..4])}</b>");
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[4..^2])}</b>");
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[^2..])}</b>");
+                }
+                else if (value.StartsWith("{{") && value.EndsWith("}}"))
+                {
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[..2])}</b>");
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[2..^2])}</b>");
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[^2..])}</b>");
+                }
+                else if (value.StartsWith("{") && value.EndsWith("}"))
+                {
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[..1])}</b>");
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[1..^1])}</b>");
+                    sb.Append($"<b class='y'>{WebUtility.HtmlEncode(value[^1..])}</b>");
+                }
+                else
+                {
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value)}</b>");
+                }
+            }
+
+            void AppendLiteral(string value)
+            {
+                var current = 0;
+                var next = value.IndexOf("{{", current);
+                while (next >= 0)
+                {
+                    if (next > current)
+                    {
+                        sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[current..next])}</b>");
+                    }
+                    sb.Append("<b class='y'>{{</b>");
+                    current = next + 2;
+
+                    next = value.IndexOf("}}", current);
+                    if (next < 0)
+                    {
+                        break;
+                    }
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[current..next])}</b>");
+                    sb.Append("<b class='y'>}}</b>");
+                    current = next + 2;
+
+                    next = value.IndexOf("{{", current);
+                }
+
+                if (current < value.Length)
+                {
+                    sb.Append($"<b class='b'>{WebUtility.HtmlEncode(value[current..])}</b>");
+                }
+            }
         }
 
     }

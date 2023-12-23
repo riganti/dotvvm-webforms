@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using System;
 
 namespace DotVVM.Utils.AspxConverter.Matching.Utils
 {
@@ -39,6 +40,16 @@ namespace DotVVM.Utils.AspxConverter.Matching.Utils
 #if RUN_FROM_TESTS
                 throw;
 #endif
+            }
+            return content;
+        }
+
+        public static string EnsureDoubleBraceBinding(string content)
+        {
+            if (content.StartsWith("{") && content.EndsWith("}")
+                && !content.StartsWith("{{") && !content.EndsWith("}}"))
+            {
+                return "{" + content + "}";
             }
             return content;
         }

@@ -1,4 +1,5 @@
-﻿using DotVVM.Utils.AspxConverter.Parser.Tokens;
+﻿using DotVVM.Utils.AspxConverter.Matching.Utils;
+using DotVVM.Utils.AspxConverter.Parser.Tokens;
 using DotVVM.Utils.AspxConverter.Workspace;
 
 namespace DotVVM.Utils.AspxConverter.Matching.Fixes
@@ -11,17 +12,20 @@ namespace DotVVM.Utils.AspxConverter.Matching.Fixes
 
         public string Content { get; }
 
-        public AddInnerContentFix(BeginTagToken beginTag, EndTagToken endTag, string content)
+        public bool EnsureDoubleBraceBinding { get; }
+
+        public AddInnerContentFix(BeginTagToken beginTag, EndTagToken endTag, string content, bool ensureDoubleBraceBinding)
         {
             BeginTag = beginTag;
             EndTag = endTag;
             Content = content;
+            EnsureDoubleBraceBinding = ensureDoubleBraceBinding;
         }
 
         public override void Apply(WorkspaceFixContext context)
         {
             var targetIndex = context.Tokens.IndexOf(BeginTag);
-            var contentNode = new LiteralToken(0, Content);
+            var contentNode = new LiteralToken(0, EnsureDoubleBraceBinding ? BindingParser.EnsureDoubleBraceBinding(Content) : Content);
 
             if (BeginTag.IsSelfClosing)
             {

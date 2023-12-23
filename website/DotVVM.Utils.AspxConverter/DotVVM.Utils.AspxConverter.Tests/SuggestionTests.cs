@@ -228,6 +228,18 @@ namespace DotVVM.Utils.AspxConverter.Tests
         }
 
         [Fact]
+        public void HyperLinkWithTextBindingSuggestionsTest()
+        {
+            var input = @"<asp:HyperLink NavigateUrl=""https://www.google.com"" Text=""<%# Eval(""Text"") %>"" />";
+            InitWorkspace(input);
+
+            ApplySuggestions(maxStabilizationAttempts: 2);
+
+            var markup = workspace.GetMarkup();
+            Assert.Equal(@"<a href=""https://www.google.com"">{{value: Text}}</a>", markup);
+        }
+
+        [Fact]
         public void HyperLinkRouteSuggestionsTest()
         {
             var input = @"<asp:HyperLink NavigateUrl=""<%$ RouteUrl: RouteName=HomePage, PageIndex=1 %>"" Text=""My text"" />";
@@ -245,10 +257,22 @@ namespace DotVVM.Utils.AspxConverter.Tests
             workspace.Initialize(input);
         }
 
-        private void ApplySuggestions()
+        private void ApplySuggestions(int maxStabilizationAttempts = 1)
         {
             var suggestions = workspace.Suggestions.Select(s => s.UniqueId).ToArray();
             workspace.ApplyFixes(suggestions);
+
+            maxStabilizationAttempts--;
+            while (maxStabilizationAttempts > 0 && workspace.Suggestions.Any())
+            {
+                suggestions = workspace.Suggestions.Select(s => s.UniqueId).ToArray();
+                workspace.ApplyFixes(suggestions);
+                maxStabilizationAttempts--;
+            }
+            if (workspace.Suggestions.Any())
+            {
+                Assert.Fail("New suggestions appeared after application.");
+            }
         }
 
     }

@@ -201,6 +201,15 @@ namespace DotVVM.Utils.AspxConverter.Parser
                             var quotesStart = current;
                             var quoteChar = AcceptChar();
 
+                            if (ContinuesWith("<%"))
+                            {
+                                AcceptCodeBlock();
+                            }
+                            else if (ContinuesWith("{"))
+                            {
+                                AcceptDotvvmBinding();
+                            }
+
                             AcceptUntil(quoteChar);
                             AcceptChar();
                             var attributeValueText = markup[quotesStart..current];
@@ -211,9 +220,20 @@ namespace DotVVM.Utils.AspxConverter.Parser
                         {
                             // unquoted attribute
                             var valueStart = current;
-                            var text = AcceptNonWhitespace('/', '>');
 
-                            var value = new AttributeUnquotedValueToken(valueStart, text);
+                            if (ContinuesWith("<%"))
+                            {
+                                AcceptCodeBlock();
+                            }
+                            else if (ContinuesWith("{"))
+                            {
+                                AcceptDotvvmBinding();
+                            }
+
+                            AcceptNonWhitespace('/', '>');
+                            var attributeValueText = markup[valueStart..current];
+
+                            var value = new AttributeUnquotedValueToken(valueStart, attributeValueText);
                             attributes.Add(new AttributeToken(attributeStart, beforeAttributeName, name, beforeValue, value));
                         }
                         tagNameEnd = current;
@@ -226,6 +246,30 @@ namespace DotVVM.Utils.AspxConverter.Parser
                     }
 
                 }
+            }
+        }
+
+        private void AcceptDotvvmBinding()
+        {
+            if (ContinuesWith("{{"))
+            {
+                AcceptUntil("}}");
+                AcceptChar();
+                AcceptChar();
+            }
+            else if (ContinuesWith("{"))
+            {
+                AcceptUntil("}");
+                AcceptChar();
+            }
+        }
+
+        private void AcceptCodeBlock()
+        {
+            if (AcceptUntil("%>") != null)
+            {
+                AcceptChar();
+                AcceptChar();
             }
         }
 

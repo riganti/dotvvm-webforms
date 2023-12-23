@@ -71,7 +71,7 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                             Fixes = new FixAction[]
                             {
                                 new RemoveAttributeFix(tagToken, textAttribute),
-                                new AddInnerContentFix(tagToken, reader.EndTag, textAttribute.GetValue())
+                                new AddInnerContentFix(tagToken, reader.EndTag, textAttribute.GetValue(), ensureDoubleBraceBinding: true)
                             }
                         };
                     }

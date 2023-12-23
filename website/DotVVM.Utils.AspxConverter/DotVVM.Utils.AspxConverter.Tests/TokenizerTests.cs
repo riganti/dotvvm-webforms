@@ -285,6 +285,70 @@ text");
             CheckEnd();
         }
 
+        [Fact]
+        public void TagWithAttributeBinding()
+        {
+            var input = @"<asp:HyperLink runat=""server"" Text=""<%# Eval(""TagName"") %>"">";
+
+            Tokenize(input);
+
+            CheckToken<BeginTagToken>(input, t =>
+            {
+                Assert.Single(t.Attributes, a => a.Name == "runat" && a.Value is AttributeQuotedValueToken { Value: "server" });
+                Assert.Single(t.Attributes, a => a.Name == "Text" && a.Value is AttributeQuotedValueToken { Value: @"<%# Eval(""TagName"") %>" });
+                Assert.Equal("asp:HyperLink", t.TagName);
+            });
+            CheckEnd();
+        }
+
+        [Fact]
+        public void TagWithUnquotedAttributeBinding()
+        {
+            var input = @"<asp:HyperLink runat=""server"" Text=<%#: Eval(""TagName"") %>>";
+
+            Tokenize(input);
+
+            CheckToken<BeginTagToken>(input, t =>
+            {
+                Assert.Single(t.Attributes, a => a.Name == "runat" && a.Value is AttributeQuotedValueToken { Value: "server" });
+                Assert.Single(t.Attributes, a => a.Name == "Text" && a.Value is AttributeUnquotedValueToken { Value: @"<%#: Eval(""TagName"") %>" });
+                Assert.Equal("asp:HyperLink", t.TagName);
+            });
+            CheckEnd();
+        }
+
+        [Fact]
+        public void TagWithAttributeDotvvmBinding()
+        {
+            var input = @"<asp:HyperLink runat=""server"" Text=""{value: Price.ToString(""c0"")}"")>";
+
+            Tokenize(input);
+
+            CheckToken<BeginTagToken>(input, t =>
+            {
+                Assert.Single(t.Attributes, a => a.Name == "runat" && a.Value is AttributeQuotedValueToken { Value: "server" });
+                Assert.Single(t.Attributes, a => a.Name == "Text" && a.Value is AttributeQuotedValueToken { Value: @"{value: Price.ToString(""c0"")}" });
+                Assert.Equal("asp:HyperLink", t.TagName);
+            });
+            CheckEnd();
+        }
+
+        [Fact]
+        public void TagWithUnquotedAttributeDotvvmBinding()
+        {
+            var input = @"<asp:HyperLink runat=""server"" Text={value: Price.ToString(""c0"")}>";
+
+            Tokenize(input);
+
+            CheckToken<BeginTagToken>(input, t =>
+            {
+                Assert.Single(t.Attributes, a => a.Name == "runat" && a.Value is AttributeQuotedValueToken { Value: "server" });
+                Assert.Single(t.Attributes, a => a.Name == "Text" && a.Value is AttributeUnquotedValueToken { Value: @"{value: Price.ToString(""c0"")}" });
+                Assert.Equal("asp:HyperLink", t.TagName);
+            });
+            CheckEnd();
+        }
+
         private void CheckEnd()
         {
             Assert.Equal(checkedToken, tokens.Count);

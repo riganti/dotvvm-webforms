@@ -20,14 +20,8 @@
   <ItemGroup>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
-    <None Include="wwwroot\js\syntax\syntax.es5.js" />
-    <None Include="wwwroot\js\syntax\syntax.es5.min.js" />
     <None Include="wwwroot\js\syntax\syntax.js" />
-    <None Include="wwwroot\js\syntax\syntax_csharp.es5.js" />
-    <None Include="wwwroot\js\syntax\syntax_csharp.es5.min.js" />
     <None Include="wwwroot\js\syntax\syntax_csharp.js" />
-    <None Include="wwwroot\js\syntax\syntax_dothtml.es5.js" />
-    <None Include="wwwroot\js\syntax\syntax_dothtml.es5.min.js" />
     <None Include="wwwroot\js\syntax\syntax_dothtml.js" />
   </ItemGroup>
   <ItemGroup>
