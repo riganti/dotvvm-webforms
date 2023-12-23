@@ -19,6 +19,7 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                     var attribute = beginTagToken.Attributes[attributeIndex];
                     if (BindingParser.TryParseBinding(attribute.GetValue(), out var binding))
                     {
+                        binding = BindingParser.TranslateBinding(binding);
                         suggestions.Add(new SuggestionInstance()
                         {
                             Suggestion = new Suggestion() {

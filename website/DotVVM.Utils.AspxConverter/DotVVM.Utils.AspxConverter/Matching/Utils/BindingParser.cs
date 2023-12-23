@@ -1,7 +1,5 @@
-﻿using DotVVM.Utils.AspxConverter.Parser.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace DotVVM.Utils.AspxConverter.Matching.Utils
 {
@@ -27,7 +25,22 @@ namespace DotVVM.Utils.AspxConverter.Matching.Utils
 
         public static string TranslateBinding(string content)
         {
-            return content.Trim();
+            try
+            {
+                SyntaxNode syntax = SyntaxFactory.ParseExpression(content.Trim());
+
+                var visitor = new BindingTranslationVisitor();
+                syntax = visitor.Visit(syntax);
+
+                return syntax.NormalizeWhitespace().ToFullString();
+            }
+            catch
+            {
+#if RUN_FROM_TESTS
+                throw;
+#endif
+            }
+            return content;
         }
     }
 }

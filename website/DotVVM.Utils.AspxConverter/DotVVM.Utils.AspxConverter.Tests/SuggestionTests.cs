@@ -52,7 +52,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
         <dot:GridViewTextColumn HeaderText=""Col1"" ValueBinding=""{value: Test}"" />
         <dot:GridViewTemplateColumn HeaderText=""Col2"">
             <ContentTemplate>
-                {{value: Eval(""Amount"")}} pcs
+                {{value: Amount}} pcs
             </ContentTemplate>
         </dot:GridViewTemplateColumn>
     </Columns>
@@ -107,8 +107,8 @@ namespace DotVVM.Utils.AspxConverter.Tests
     
     <ItemTemplate>
        <tr>
-          <td> {{value: Eval(""Name"")}} </td>
-          <td> {{value: Eval(""Ticker"")}} </td>
+          <td> {{value: Name}} </td>
+          <td> {{value: Ticker}} </td>
        </tr>
     </ItemTemplate>
     
@@ -170,7 +170,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
                     <dot:Repeater ItemType=""test"" SelectMethod=""SelectTags"">
         
         <ItemTemplate>
-            <li><span class=""ui-icon ui-icon-tag""></span> {{value: Item.TagName}}</li>
+            <li><span class=""ui-icon ui-icon-tag""></span> {{value: TagName}}</li>
         </ItemTemplate>
     </dot:Repeater>
                 </ul>
@@ -187,7 +187,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
             ApplySuggestions();
 
             var markup = workspace.GetMarkup();
-            Assert.Equal(@"<h1 class=""{value: Item.Title}"">test</h1>", markup);
+            Assert.Equal(@"<h1 class=""{value: Title}"">test</h1>", markup);
         }
 
 
@@ -200,7 +200,7 @@ namespace DotVVM.Utils.AspxConverter.Tests
             ApplySuggestions();
 
             var markup = workspace.GetMarkup();
-            Assert.Equal(@"some text {{value: Item.Title}}", markup);
+            Assert.Equal(@"some text {{value: Title}}", markup);
         }
 
         [Fact]
