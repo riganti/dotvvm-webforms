@@ -14,11 +14,6 @@
     <None Remove="dotvvm_serialized_config.json.tmp" />
   </ItemGroup>
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\app.min.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\nav-and-footer.min.css" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Data\*.md" />
     <Content Include="Data\*.md" CopyToPublishDirectory="Always" />
   </ItemGroup>
@@ -38,7 +33,6 @@
   <ItemGroup>
     <PackageReference Include="CommonMark.NET" Version="0.15.1" />
     <PackageReference Include="DotVVM.AspNetCore" Version="2.4.0.1" />
-
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotVVM.Utils.AspxConverter\DotVVM.Utils.AspxConverter.csproj" />

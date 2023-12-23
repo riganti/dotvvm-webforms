@@ -6,15 +6,6 @@
     <dot:RequiredResource Name="nav-and-footer-css" />
 
     <h1 class="header__title" InnerText="ASPX to DotVVM Converter" />
-
-    <div class="header__desc">
-        <p class="intense">
-            This online tool helps with conversion of ASPX pages and ASCX user controls into DotVVM files.
-        </p>
-        <p>
-            Creating a 100% reliable converter is not possible, but we believe that this tool will help you at least with simple scenarios.
-        </p>
-    </div>
 </dot:Content>
 
 <dot:Content ContentPlaceHolderID="MainContent">
@@ -48,7 +39,7 @@
 
     <div class="step-2" IncludeInPage="{value: TabIndex == 1}">
         <div class="toolbar">
-            <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).OriginalMarkup());">Copy Code</a>
+            <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).OriginalMarkup(), false);">Copy Code</a>
         </div>
         <div class="scrollable-area">
             <div>
@@ -109,7 +100,7 @@
             <div class="panel">
                 <div class="panel-heading">
                     <div class="toolbar">
-                        <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).Code());">Copy Code</a>
+                        <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).Code(), true);">Copy Code</a>
                     </div>
 
                     {{value: ClassName}}.cs

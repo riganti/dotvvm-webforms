@@ -9,17 +9,10 @@
 
     <div class="header__desc">
         <p class="intense">
-            <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> is an open source MVVM framework for ASP.NET and ASP.NET Core.
+            <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> provides a unique way to <a href="https://www.dotvvm.com/modernize">modernize old ASP.NET apps to .NET 8</a>.
         </p>
         <p>
-            It is inspired by ASP.NET Web Forms, but addresses the most criticized pain-points of Web Forms: viewstate, ugly markup and bad testability.
-        </p>
-        <p>
-            DotVVM can be used together with ASP.NET Web Forms in the same application. If you need to extend legacy Web Forms application with new pages, you can write them in DotVVM
-            without rewriting the rest.
-        </p>
-        <p>
-            <a href="https://academy.dotvvm.com" target="_blank">Learning DotVVM</a> is a matter of days.
+            This cheat-sheet describes the main differences between ASPX markup and DotVVM syntax. 
         </p>
     </div>
 </dot:Content>
@@ -33,6 +26,7 @@
     <cc:Sample SampleName="05-data-binding-everywhere" />
     <cc:Sample SampleName="06-client-side-interactivity" />
     <cc:Sample SampleName="07-events" />
+    <cc:Sample SampleName="07-page-lifecycle" />
     <cc:Sample SampleName="08-repeater" />
     <cc:Sample SampleName="09-checkboxlist" />
     <cc:Sample SampleName="10-textbox-and-validation" />
@@ -56,7 +50,8 @@
         <div>
             <p class="intense">
                 <a href="https://www.dotvvm.com" target="_blank">DotVVM</a> is open source and offers a
-                <a href="https://www.dotvvm.com/get-dotvvm" target="_blank">free extension for Visual Studio 2019</a>.
+                <a href="https://www.dotvvm.com/get-dotvvm"
+                   target="_blank">free extension for Visual Studio 2022, 2019, and VS Code</a>.
             </p>
 
             <p class="intense">

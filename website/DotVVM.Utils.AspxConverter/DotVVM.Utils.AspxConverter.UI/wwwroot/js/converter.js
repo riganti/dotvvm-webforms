@@ -26,7 +26,14 @@ function isElementInViewport(el) {
     );
 }
 
-function copyCode(code) {
+function copyCode(code, stripClassDeclaration = false) {
+    if (stripClassDeclaration) {
+        code = code.substring(code.indexOf("{") + 1);
+        code = code.substring(0, code.lastIndexOf("}"));
+        code = code.trim();
+        code = code.replace(/\n    /mg, "\n");
+    }
+
     navigator.clipboard.writeText(code);
 }
 
