@@ -44,7 +44,7 @@ body {
     --gap: 32px;
     display: grid;
     grid-template-columns: var(--template-col);
-    align-items: baseline;
+    align-items: start;
     gap: var(--gap);
     background-color: $color-section;
     padding-inline: var(--pad-i);
@@ -78,6 +78,10 @@ body {
     &__title {
         font-size: xx-large;
         margin-top: 0;
+
+        &-mb-0{
+            margin-bottom:0;
+        }
     }
 
     &__desc {

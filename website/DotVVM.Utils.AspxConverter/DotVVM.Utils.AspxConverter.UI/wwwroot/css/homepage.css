@@ -93,7 +93,7 @@ body footer {
   --gap: 32px;
   display: grid;
   grid-template-columns: var(--template-col);
-  align-items: baseline;
+  align-items: start;
   gap: var(--gap);
   background-color: #f1f6fe;
   padding-inline: var(--pad-i);
@@ -128,6 +128,9 @@ body footer {
 .header__title {
   font-size: xx-large;
   margin-top: 0;
+}
+.header__title-mb-0 {
+  margin-bottom: 0;
 }
 .header__buttons {
   display: inline-flex;

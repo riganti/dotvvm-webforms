@@ -12,7 +12,6 @@ header {
     --padding-y: 32px;
     margin: 0;
     padding: var(--padding-y) var(--padding-x);
-    padding-bottom: 0;
     display: inline-flex;
     flex-flow: row wrap;
     width: max-content;
@@ -28,9 +27,12 @@ header {
         --padding-x: 24px;
     }
 
+    @media only screen and (max-width: 1280px) {
+        --padding-y: 16px;
+    }
+
     @media only screen and (max-width: 1024px) {
         --padding-x: 16px;
-        --padding-y: 16px;
     }
 
     @media screen and (max-width: 768px) {
@@ -55,6 +57,7 @@ header {
         --padding-x: 56px;
         --padding-y: 32px;
         padding: var(--padding-y) var(--padding-x);
+        padding-top:0;
         background-color: white;
 
         @media only screen and (max-width: 1440px) {
@@ -65,9 +68,12 @@ header {
             --padding-x: 24px;
         }
 
+        @media only screen and (max-width: 1280px) {
+            --padding-y: 16px;
+        }
+
         @media only screen and (max-width: 1024px) {
             --padding-x: 16px;
-            --padding-y: 16px;
         }
 
         &.buttons {
@@ -89,31 +95,47 @@ header {
 }
 
 .step-2 {
-    .toolbar {
-        padding: 0 2em;
-        text-align: right;
-        margin-top: -2em;
-        margin-bottom: 2em;
+    --padding-x: 56px;
+    padding-inline: var(--padding-x);
+
+    @media only screen and (max-width: 1440px) {
+        --padding-x: 32px;
+    }
+
+    @media only screen and (max-width: 1366px) {
+        --padding-x: 24px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        --padding-x: 16px;
     }
 
     .scrollable-area {
         margin-bottom: 1em;
         display: flex;
+        gap: 24px;
 
         > div {
-            padding: 0 2em;
             min-height: 500px;
             height: calc(100vh - 600px);
             overflow-y: auto;
+            position: relative;
 
             &:first-child {
                 flex: 6;
                 background-color: $color-code-background-secondary;
+                border: solid 1px #ebf0f4;
             }
 
             &:last-child {
                 flex: 4;
             }
+        }
+
+        .button-copy {
+            position: absolute;
+            right: 4px;
+            top: 4px;
         }
     }
 
@@ -182,7 +204,20 @@ header {
 }
 
 .step-3 {
-    padding: 0 2em;
+    --padding-x: 56px;
+    padding-inline: var(--padding-x);
+
+    @media only screen and (max-width: 1440px) {
+        --padding-x: 32px;
+    }
+
+    @media only screen and (max-width: 1366px) {
+        --padding-x: 24px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        --padding-x: 16px;
+    }
 
     .toolbar {
         float: right;
@@ -195,7 +230,14 @@ header {
     }
 
     .panel-body {
+        position: relative;
         background-color: $color-code-background-secondary;
+    }
+
+    .button-copy {
+        position: absolute;
+        right: 4px;
+        top: 4px;
     }
 }
 

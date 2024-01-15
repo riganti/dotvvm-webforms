@@ -93,7 +93,7 @@ body footer {
   --gap: 32px;
   display: grid;
   grid-template-columns: var(--template-col);
-  align-items: baseline;
+  align-items: start;
   gap: var(--gap);
   background-color: #f1f6fe;
   padding-inline: var(--pad-i);
@@ -128,6 +128,9 @@ body footer {
 .header__title {
   font-size: xx-large;
   margin-top: 0;
+}
+.header__title-mb-0 {
+  margin-bottom: 0;
 }
 .header__buttons {
   display: inline-flex;
@@ -231,7 +234,6 @@ header {
   --padding-y: 32px;
   margin: 0;
   padding: var(--padding-y) var(--padding-x);
-  padding-bottom: 0;
   display: inline-flex;
   flex-flow: row wrap;
   width: max-content;
@@ -249,10 +251,14 @@ header {
     --padding-x: 24px;
   }
 }
+@media only screen and (max-width: 1280px) {
+  .page-nav {
+    --padding-y: 16px;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .page-nav {
     --padding-x: 16px;
-    --padding-y: 16px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -275,6 +281,7 @@ header {
   --padding-x: 56px;
   --padding-y: 32px;
   padding: var(--padding-y) var(--padding-x);
+  padding-top: 0;
   background-color: white;
 }
 @media only screen and (max-width: 1440px) {
@@ -287,10 +294,14 @@ header {
     --padding-x: 24px;
   }
 }
+@media only screen and (max-width: 1280px) {
+  .step-1 div {
+    --padding-y: 16px;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .step-1 div {
     --padding-x: 16px;
-    --padding-y: 16px;
   }
 }
 .step-1 div.buttons {
@@ -307,28 +318,48 @@ header {
   text-align: right;
 }
 
-.step-2 .toolbar {
-  padding: 0 2em;
-  text-align: right;
-  margin-top: -2em;
-  margin-bottom: 2em;
+.step-2 {
+  --padding-x: 56px;
+  padding-inline: var(--padding-x);
+}
+@media only screen and (max-width: 1440px) {
+  .step-2 {
+    --padding-x: 32px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .step-2 {
+    --padding-x: 24px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .step-2 {
+    --padding-x: 16px;
+  }
 }
 .step-2 .scrollable-area {
   margin-bottom: 1em;
   display: flex;
+  gap: 24px;
 }
 .step-2 .scrollable-area > div {
-  padding: 0 2em;
   min-height: 500px;
   height: calc(100vh - 600px);
   overflow-y: auto;
+  position: relative;
 }
 .step-2 .scrollable-area > div:first-child {
   flex: 6;
   background-color: #fafafa;
+  border: solid 1px #ebf0f4;
 }
 .step-2 .scrollable-area > div:last-child {
   flex: 4;
+}
+.step-2 .scrollable-area .button-copy {
+  position: absolute;
+  right: 4px;
+  top: 4px;
 }
 .step-2 .panel .expand-button {
   display: none;
@@ -375,7 +406,23 @@ header {
 }
 
 .step-3 {
-  padding: 0 2em;
+  --padding-x: 56px;
+  padding-inline: var(--padding-x);
+}
+@media only screen and (max-width: 1440px) {
+  .step-3 {
+    --padding-x: 32px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .step-3 {
+    --padding-x: 24px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .step-3 {
+    --padding-x: 16px;
+  }
 }
 .step-3 .toolbar {
   float: right;
@@ -386,7 +433,13 @@ header {
   font-weight: bold;
 }
 .step-3 .panel-body {
+  position: relative;
   background-color: #fafafa;
+}
+.step-3 .button-copy {
+  position: absolute;
+  right: 4px;
+  top: 4px;
 }
 
 pre {
