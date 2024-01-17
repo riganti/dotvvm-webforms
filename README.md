@@ -1,42 +1,25 @@
-# ASP.NET Web Forms Adapters for DotVVM
+# ASP.NET Web Forms to DotVVM - Converter
 
-This repository contains a set of controls that help with using [DotVVM](https://github.com/riganti/dotvvm) and ASP.NET Web Forms together in one ASP.NET application.
+This repository contains the source code of the [ASP.NET Web Forms to DotVVM website](https://www.dotvvm.com/webforms). 
 
-This integration can help with modernization of legacy ASP.NET web apps as it allows to build new parts of the old application using modern and cleaner development methods (MVVM pattern) while utilizing the same business layer and allowing smooth transition between old and new parts of the application thanks to single sign on.
+It contains:
 
-> The development of this library is still in progress. The integration will work with DotVVM 2.0. When the library is more stable, it will be published on Nuget - currently you need to build the source code. 
+* The landing page which describes the differences between the **ASPX** and **DotHTML** markup.
+* The [ASP.NET Web Forms to DotVVM Converter](https://www.dotvvm.com/webforms/converter). 
 
-Any feedback is welcome - we're on [Gitter](https://gitter.im/riganti/dotvvm).
+## Extending the converter
 
+The converter can be extended with additional rules that help to transform common ASPX constructs.
 
-## Controls
+The process uses the following pipeline:
 
-* `<dotvvm:RouteLink runat="server">` is ASP.NET Web Forms control that renders hyperlinks for DotVVM routes.
+* The input ASPX file is parsed and exposed as a list of tokens.
+* The `Matchers` folder contains classes that iterate the list of tokens and produce `SuggestionInstance` objects representing the type of transform that can be performed.
+* Each suggestion instance can provide a list of `Fixes` (transforms made to the token list). When the suggestion is applied, the fixes are invoked (in the order in which they were added to the suggestion instance).
+* After applying the suggestion, the process is repeated. It may need several executions until the token list gets stabilized.
 
-* `<webforms:RouteLink>` is DotVVM control that renders hyperlinks for ASP.NET Web Forms routes.
+Since the token list is linear, in order to read the element hierarchy (find the matching end tag for the begin tag), there is the `ControlInnerElementsReader`.
 
-## Usage
+You can also extend the `BindingParser` class to support transforms in the data-binding expressions.
 
-1. Open the csproj file and add change the `<ProjectTypeGuids>` element to the following code:
-
-```
-<ProjectTypeGuids>{94EE71E2-EE2A-480B-8704-AF46D2E58D94};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
-```
-
-2. Install `Dotvvm.Adapters.WebForms` and `Microsoft.Owin.Host.SystemWeb` packages in the project.
-
-3. Add `Startup.cs` and `DotvvmStartup.cs` classes (see [sample](/src/TestSamples/) app).
-
-4. Add the following registration to `web.config`:
-
-```
-  <system.web>
-    <pages>
-      <controls>
-        <add tagPrefix="dotvvm" namespace="DotVVM.Adapters.WebForms.Controls.WebForms" assembly="DotVVM.Adapters.WebForms"/>
-      </controls>
-    </pages>
-  </system.web>
-```
-
-5. Use the controls to link between ASP.NET Web Forms and DotVVM routes (see [sample](src/TestSamples/Links/) app).
+There are also tests for each transform.
