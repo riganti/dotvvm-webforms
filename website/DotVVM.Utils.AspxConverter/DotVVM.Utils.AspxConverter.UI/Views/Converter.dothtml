@@ -5,7 +5,7 @@
     <dot:RequiredResource Name="converter-css" />
     <dot:RequiredResource Name="nav-and-footer-css" />
 
-    <h1 class="header__title" InnerText="ASPX to DotVVM Converter" />
+    <h1 class="header__title header__title-mb-0" InnerText="ASPX to DotVVM Converter" />
 </dot:Content>
 
 <dot:Content ContentPlaceHolderID="MainContent">
@@ -38,11 +38,9 @@
     </div>
 
     <div class="step-2" IncludeInPage="{value: TabIndex == 1}">
-        <div class="toolbar">
-            <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).OriginalMarkup(), false);">Copy Code</a>
-        </div>
         <div class="scrollable-area">
             <div>
+                <a href="javascript:;" class="button button-copy" title="Copy code" onclick="copyCode(ko.dataFor(this).OriginalMarkup(), false);"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" /></svg></a>
                 <pre><dot:HtmlLiteral Html="{value: DisplayHtml}" WrapperTagName="code" /></pre>
             </div>
             <div>
@@ -98,14 +96,11 @@
     <div class="step-3" IncludeInPage="{value: TabIndex == 2}">
         <dot:Repeater DataSource="{value: CsharpFiles}">
             <div class="panel">
-                <div class="panel-heading">
-                    <div class="toolbar">
-                        <a href="javascript:;" class="button" onclick="copyCode(ko.dataFor(this).Code(), true);">Copy Code</a>
-                    </div>
-
+                <div class="panel-heading">   
                     {{value: ClassName}}.cs
                 </div>
                 <div class="panel-body">
+                    <a href="javascript:;" class="button button-copy" title="Copy code" onclick="copyCode(ko.dataFor(this).Code(), true);"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" /></svg></a>
                     <pre><dot:HtmlLiteral Html="{value: Code}" WrapperTagName="code" /></pre>
                 </div>
             </div>

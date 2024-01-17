@@ -533,12 +533,26 @@
     border: 2px solid var(--btn-border-color);
 }
 
-@media only screen and (max-width: 1024px) {
+    .button.button-copy {
+        --icon-size: 24px;
+        --btn-min-width: fit-content;
+        --btn-badding: 4px 4px;
+    }
+
+    .button.button-copy >svg {
+       margin-left:0;
+    }
+
+@media only screen and (max-width: 1280px) {
     .button {
         --btn-min-width: 120px;
         --btn-badding: 4px 8px;
         --btn-font-size: medium;
     }
+
+        .button.button-copy {
+            --icon-size: 18px;
+        }
 }
 
 @media only screen and (max-width: 768px) {
