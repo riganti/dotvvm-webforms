@@ -26,6 +26,7 @@ namespace DotVVM.Utils.AspxConverter.Matching.Matchers
                             new ReplaceTokenFix(bindingToken, new LiteralToken(0, $"{{{{value: {binding}}}}}"))
                         }
                     },
+                    TagIndex = index,
                     Index = suggestions.Count
                 });
 
